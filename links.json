@@ -1,0 +1,38 @@
+{
+  "custom": {
+    "alias": "custom",
+    "long_url": "https://shopee.co.id/toko-kopi-nusantara/promo-spesial-diskon-50",
+    "clicks": 151,
+    "created_at": "2026-11-21T12:00:00Z"
+  },
+  "promo": {
+    "alias": "promo",
+    "long_url": "https://google.com",
+    "clicks": 42,
+    "created_at": "2026-11-21T12:00:00Z"
+  },
+  "wa-pesan": {
+    "alias": "wa-pesan",
+    "long_url": "https://wa.me/628123456789",
+    "clicks": 12480,
+    "created_at": "2026-11-21T12:00:00Z"
+  },
+  "toko-shopee": {
+    "alias": "toko-shopee",
+    "long_url": "https://shopee.co.id",
+    "clicks": 3216,
+    "created_at": "2026-11-21T12:00:00Z"
+  },
+  "survey-2026": {
+    "alias": "survey-2026",
+    "long_url": "https://forms.gle/sample",
+    "clicks": 1904,
+    "created_at": "2026-11-21T12:00:00Z"
+  },
+  "myrepo": {
+    "alias": "myrepo",
+    "long_url": "https://github.com/sakahayang-code/Short-Link-m.id",
+    "clicks": 1,
+    "created_at": "2026-11-21"
+  }
+}
