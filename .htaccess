@@ -1,0 +1,29 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Set DirectoryIndex
+    DirectoryIndex index.html index.php
+
+    # CORS Headers
+    <IfModule mod_headers.c>
+        Header set Access-Control-Allow-Origin "*"
+        Header set Access-Control-Allow-Methods "GET, POST, OPTIONS"
+        Header set Access-Control-Allow-Headers "Content-Type, Authorization, X-Requested-With"
+    </IfModule>
+
+    # API routes for cPanel PHP backend
+    RewriteRule ^api/shorten/?$ api.php?action=shorten [QSA,L]
+    RewriteRule ^api/click/?$ api.php?action=click [QSA,L]
+    RewriteRule ^api/links/?$ api.php?action=links [QSA,L]
+
+    # Serve existing files and folders directly (assets, css, js, images, etc.)
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # Don't rewrite root or index.html
+    RewriteRule ^(index\.(html|php))?$ - [L]
+
+    # Any slug alias (e.g. /custom, /linkCustom, /promo) is handled by redirect.php
+    RewriteRule ^([a-zA-Z0-9_\-]+)/?$ redirect.php?alias=$1 [QSA,L]
+</IfModule>

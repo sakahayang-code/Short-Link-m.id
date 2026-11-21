@@ -156,6 +156,10 @@ class ShortLinkHandler(http.server.SimpleHTTPRequestHandler):
         parsed = urllib.parse.urlparse(self.path)
         path = parsed.path.lstrip("/")
 
+        # Strip optional /shortlink/ prefix for cPanel simulation
+        if path.startswith("shortlink/"):
+            path = path[len("shortlink/"):]
+
         # API check
         if path == "api/links":
             links = load_links()

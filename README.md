@@ -89,9 +89,13 @@ Aplikasi ini menyertakan backend server `server.py` yang menangani pengalihan HT
 ```
 /home/antigravity/
 ├── index.html            # Aplikasi web landing page m.id lengkap & interaktif
-├── server.py             # HTTP server dengan live 302 redirection engine & API
+├── .htaccess             # Aturan Rewrite Apache untuk cPanel hosting
+├── redirect.php          # Engine pengalihan HTTP 302 native PHP untuk cPanel
+├── api.php               # REST API native PHP untuk pemendek link di cPanel
+├── server.py             # HTTP server Python lokal dengan live 302 redirection & API
 ├── links.json            # Basis data short link yang aktif
 ├── favicon.svg           # Logo icon m.id untuk favicon browser
+├── .cpanel.yml           # Konfigurasi deployment Git cPanel ke /public_html/shortlink
 ├── assets/               # Aset media lokal m.id
 │   ├── logo.svg          # Logo resmi m.id (vector)
 │   ├── logo-white.svg    # Logo putih m.id untuk footer
@@ -106,9 +110,39 @@ Aplikasi ini menyertakan backend server `server.py` yang menangani pengalihan HT
 
 ---
 
-## 💻 Cara Menjalankan
+## 🌐 Menghubungkan `m.id/linkCustom` ke Hosting `multimediatama.com`
 
-Jalankan server python yang sudah dilengkapi mesin pengalihan:
+Agar saat seseorang mengetik `m.id/linkCustom` di browser dapat sampai ke hosting Anda di `multimediatama.com` dan langsung dialihkan ke link asli:
+
+### Metode 1: Menggunakan Domain Alias di cPanel (Jika Anda Memiliki Domain `m.id`)
+1. **Arahkan DNS**: Di penyedia domain `m.id`, arahkan **A Record** `m.id` ke alamat IP server hosting `multimediatama.com`.
+2. **Tambah Alias di cPanel**:
+   - Masuk ke cPanel `multimediatama.com`.
+   - Buka menu **Domains** atau **Aliases (Parked Domains)**.
+   - Tambahkan `m.id` dengan **Document Root** mengarah ke folder instalasi aplikasi: `/home/mulw1713/public_html/shortlink`.
+3. **Hasilnya**: Setiap permintaan ke `https://m.id/linkCustom` akan otomatis diproses oleh `.htaccess` dan `redirect.php`, lalu dialihkan (302 Found) ke link tujuan asli!
+
+---
+
+### Metode 2: Menggunakan Subdomain Pendek Gratis (`m.multimediatama.com`)
+Jika domain 2-huruf `m.id` bukan milik Anda (karena registry PANDI / premium):
+1. Masuk ke cPanel `multimediatama.com`.
+2. Buka menu **Subdomains**, buat subdomain baru: `m.multimediatama.com`.
+3. Atur Document Root-nya ke: `/public_html/shortlink`.
+4. **Hasilnya**: Anda memiliki pemendek link super singkat `m.multimediatama.com/linkCustom` yang 100% gratis, resmi milik Anda, dan langsung bekerja di seluruh dunia!
+
+---
+
+### Metode 3: URL Langsung Hosting (`multimediatama.com/shortlink/linkCustom`)
+Aplikasi ini sudah dilengkapi `.htaccess` dan `redirect.php`:
+- Mengakses `https://multimediatama.com/shortlink/custom` langsung mengalihkan ke target URL via HTTP 302.
+- Mengakses `https://multimediatama.com/shortlink/?m=custom` juga langsung mengalihkan secara instan via browser resolver.
+
+---
+
+## 💻 Cara Menjalankan Secara Lokal
+
+Jalankan server python lokal:
 
 ```bash
 python3 server.py
@@ -118,3 +152,4 @@ Buka browser di:
 - **Landing Page**: `http://localhost:3000`
 - **Uji Short Link**: `http://localhost:3000/custom` (langsung mengalihkan ke halaman target)
 - **Cek Alias via Curl**: `curl -I http://localhost:3000/custom`
+
