@@ -1,0 +1,2354 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pemendek Link, Link Bio &amp; QR Code Gratis: s.id</title>
+  <meta name="description" content="Bikin link pendek, halaman bio, QR Code, dan toko digital dari satu akun. Cek analitik klik, lokasi kota, dan perangkat secara real-time.">
+  <link rel="icon" type="image/svg+xml" href="https://home.s.id/images/sid-neu-logo-dark.svg">
+  
+  <!-- Google Fonts: Inter, Montserrat, Work Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              DEFAULT: '#cc3333',
+              dark: '#a92a2a',
+              light: '#fbeeea',
+              soft: '#fdf6f3'
+            },
+            ink: '#15171c',
+            body: '#4a5160',
+            mute: '#676d7a',
+            line: '#e8e6e1',
+            paper: '#f7f5f1',
+            dark: '#101216',
+            emeraldBrand: '#15803d'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            montserrat: ['Montserrat', 'sans-serif'],
+            worksans: ['Work Sans', 'sans-serif']
+          },
+          maxWidth: {
+            '370': '1480px'
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- QRCode.js -->
+  <script src="./assets/qrcode.min.js"></script>
+  <!-- Fallback CDN for qrcode if local fails -->
+  <script>
+    if (typeof QRCode === 'undefined') {
+      document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"><\/script>');
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Work Sans', sans-serif;
+      color: #15171c;
+      background-color: #ffffff;
+      -webkit-font-smoothing: antialiased;
+    }
+    .font-heading {
+      font-family: 'Montserrat', sans-serif;
+    }
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f7f5f1;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #d4d0c8;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #b5b0a6;
+    }
+    /* Hero mesh gradient simulation */
+    .hero-glow {
+      background: radial-gradient(circle at 50% 20%, rgba(204, 51, 51, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+    }
+    /* Logo animation */
+    .brand-glow:hover {
+      filter: drop-shadow(0 0 10px rgba(204, 51, 51, 0.3));
+    }
+    /* Toast animation */
+    @keyframes slideInUp {
+      from { transform: translateY(100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .animate-toast {
+      animation: slideInUp 0.3s ease-out forwards;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-brand/10 selection:text-brand">
+
+  <!-- ========================================================================= -->
+  <!-- TOP NOTIFICATION BANNER (OPTIONAL s.id Wrapped / Updates) -->
+  <!-- ========================================================================= -->
+  <div class="bg-dark text-white text-xs py-2 px-4 text-center font-medium border-b border-gray-800 flex items-center justify-center gap-2">
+    <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-semibold bg-brand text-white">Baru</span>
+    <span data-i18n="top_banner">s.id kini dilengkapi AgentS AI &amp; s.id Shop untuk jualan produk digital langsung dari microsite!</span>
+    <a href="#bento-section" class="underline hover:text-red-300 ml-1 inline-flex items-center gap-1 font-semibold" data-i18n="top_banner_cta">Pelajari Fitur &rarr;</a>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- HEADER & NAVIGATION -->
+  <!-- ========================================================================= -->
+  <header class="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-md border-b border-line transition-all duration-200">
+    <div class="max-w-[1280px] mx-auto h-18 px-4 sm:px-6 flex items-center justify-between">
+      
+      <!-- Logo + Nav Links -->
+      <div class="flex items-center gap-8 lg:gap-10">
+        <!-- Logo s.id -->
+        <a href="#" class="flex items-center gap-2 shrink-0 group focus-visible:outline-2 focus-visible:outline-brand">
+          <!-- Exact Vector s.id Logo -->
+          <svg width="92" height="38" viewBox="0 0 97 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-transform duration-200 group-hover:scale-[1.02]">
+            <path d="M8.84835 25.7641C9.71083 26.9852 11.3826 27.2635 12.5823 26.3855C13.782 25.5076 14.0554 23.806 13.1929 22.5849L8.84835 25.7641ZM26.5623 7.64683C26.0149 6.24991 24.4585 5.56924 23.0861 6.12646C21.7137 6.68368 21.045 8.26783 21.5924 9.66475L26.5623 7.64683ZM15.9124 0.96173C14.44 1.08692 13.346 2.40338 13.469 3.90213C13.592 5.40083 14.8854 6.51436 16.3578 6.38915L15.9124 0.96173ZM10.4585 13.8522L11.9768 9.75582L6.97047 7.83334L5.45216 11.9297L10.4585 13.8522ZM11.0206 24.1745C13.1929 22.5849 13.1929 22.5849 13.1929 22.5849C13.1929 22.585 13.1928 22.5849 13.1929 22.5849C13.1927 22.5847 13.1923 22.5841 13.192 22.5836C13.1913 22.5827 13.1903 22.5813 13.189 22.5794C13.1863 22.5756 13.1823 22.57 13.1771 22.5625C13.1664 22.5475 13.1507 22.5251 13.1301 22.496C13.0891 22.4379 13.0291 22.3527 12.9532 22.2449C12.8014 22.0294 12.5865 21.7239 12.3344 21.3644C11.8296 20.6446 11.1782 19.7122 10.5862 18.854L6.20691 21.9834C6.81054 22.8585 7.47112 23.804 7.97944 24.5288C8.2339 24.8916 8.45084 25.2 8.60429 25.4179C8.68099 25.5268 8.74187 25.6132 8.7836 25.6724C8.80453 25.702 8.82058 25.7248 8.83152 25.7403C8.83699 25.748 8.84115 25.7539 8.84395 25.7579C8.84537 25.7599 8.84644 25.7614 8.84716 25.7625C8.84757 25.763 8.84811 25.7639 8.84835 25.7641C8.84829 25.764 8.84841 25.7642 8.84835 25.7641C8.84841 25.7641 8.84835 25.7641 11.0206 24.1745ZM10.5862 18.854C10.2562 18.3755 10.0275 17.5209 9.94383 16.5131L4.61209 16.972C4.72101 18.2832 5.05347 20.311 6.20691 21.9834L10.5862 18.854ZM21.0757 8.72145L21.2323 8.96296L25.6986 5.96362L25.542 5.7221L21.0757 8.72145ZM21.6907 12.2688L21.2826 13.5986L26.39 15.2224L26.7981 13.8927L21.6907 12.2688ZM21.2323 8.96296C21.3754 9.18384 21.4961 9.41894 21.5924 9.66475L26.5623 7.64683C26.3314 7.05736 26.0419 6.49336 25.6986 5.96362L21.2323 8.96296ZM21.5924 9.66475C21.918 10.4956 21.9527 11.4151 21.6907 12.2688L26.7981 13.8927C27.4265 11.845 27.3433 9.63945 26.5623 7.64683L21.5924 9.66475ZM11.9768 9.75582C12.6768 7.86728 14.3817 6.55714 16.3578 6.38915L15.9124 0.96173C11.879 1.30466 8.39918 3.9788 6.97047 7.83334L11.9768 9.75582ZM16.3578 6.38915C18.2311 6.22988 20.0405 7.12429 21.0757 8.72145L25.542 5.7221C23.4289 2.46224 19.736 0.63664 15.9124 0.96173L16.3578 6.38915ZM5.45216 11.9297C4.93759 13.3179 4.45353 15.0632 4.61209 16.972L9.94383 16.5131C9.8836 15.788 10.0564 14.9371 10.4585 13.8522L5.45216 11.9297Z" fill="#E33535"/>
+            <path d="M18.809 14.376C17.9464 13.1548 16.2747 12.8766 15.075 13.7545C13.8753 14.6324 13.6019 16.334 14.4644 17.5552L18.809 14.376ZM1.0949 32.4932C1.64235 33.8901 3.1987 34.5708 4.57111 34.0136C5.94353 33.4564 6.61231 31.8722 6.06487 30.4753L1.0949 32.4932ZM11.7449 39.1783C13.2174 39.0531 14.3113 37.7366 14.1883 36.2379C14.0653 34.7392 12.7719 33.6257 11.2995 33.7509L11.7449 39.1783ZM17.1988 26.2878L15.6805 30.3842L20.6868 32.3067L22.2051 28.2103L17.1988 26.2878ZM16.6367 15.9656C14.4644 17.5552 14.4644 17.5552 14.4644 17.5552V17.5552L14.4653 17.5564C14.4653 17.5564 14.467 17.5588 14.4683 17.5607C14.471 17.5644 14.475 17.5701 14.4802 17.5776C14.4908 17.5926 14.5066 17.6149 14.5271 17.644C14.5682 17.7022 14.6282 17.7874 14.7041 17.8951C14.8559 18.1107 15.0708 18.4162 15.3229 18.7756C15.8277 19.4954 16.4791 20.4278 17.0711 21.2861L21.4503 18.1567C20.8468 17.2816 20.1862 16.336 19.6779 15.6112C19.4233 15.2484 19.2064 14.94 19.053 14.7221C18.9763 14.6132 18.9154 14.5269 18.8736 14.4676C18.8528 14.438 18.8367 14.4152 18.8258 14.3998C18.8203 14.3921 18.8162 14.3861 18.8133 14.3821C18.8119 14.3801 18.8101 14.3776 18.8101 14.3776L18.809 14.376V14.376C18.809 14.376 18.809 14.376 16.6367 15.9656ZM17.0711 21.2861C17.4011 21.7645 17.6297 22.6191 17.7135 23.6269L23.0452 23.1681C22.9362 21.8568 22.6038 19.829 21.4503 18.1567L17.0711 21.2861ZM6.58157 31.4186L6.42503 31.1771L1.95875 34.1764L2.11529 34.4179L6.58157 31.4186ZM5.96659 27.8712L6.37468 26.5414L1.26726 24.9176L0.859171 26.2473L5.96659 27.8712ZM6.42503 31.1771C6.28187 30.9562 6.16118 30.7211 6.06487 30.4753L1.0949 32.4932C1.32594 33.0826 1.61535 33.6466 1.95875 34.1764L6.42503 31.1771ZM6.06487 30.4753C5.7393 29.6445 5.70458 28.725 5.96659 27.8712L0.859171 26.2473C0.230754 28.295 0.313989 30.5005 1.0949 32.4932L6.06487 30.4753ZM15.6805 30.3842C14.9805 32.2727 13.2756 33.5829 11.2995 33.7509L11.7449 39.1783C15.7783 38.8354 19.2581 36.1613 20.6868 32.3067L15.6805 30.3842ZM11.2995 33.7509C9.42616 33.9102 7.61683 33.0157 6.58157 31.4186L2.11529 34.4179C4.22831 37.6778 7.92129 39.5034 11.7449 39.1783L11.2995 33.7509ZM22.2051 28.2103C22.7197 26.8222 23.2038 25.0768 23.0452 23.1681L17.7135 23.6269C17.7737 24.352 17.6009 25.203 17.1988 26.2878L22.2051 28.2103Z" fill="#FFB696"/>
+            <path d="M44.717 32.0906C43.0845 32.0906 41.5112 31.9013 39.9969 31.5228C38.5064 31.1205 37.3234 30.6237 36.448 30.0322L38.2934 26.0574C39.1689 26.6016 40.1981 27.0511 41.381 27.406C42.5877 27.7372 43.7707 27.9028 44.93 27.9028C46.2076 27.9028 47.1067 27.749 47.6272 27.4415C48.1713 27.1339 48.4434 26.708 48.4434 26.1638C48.4434 25.7143 48.2305 25.3831 47.8046 25.1701C47.4024 24.9335 46.8582 24.7561 46.1721 24.6378C45.486 24.5195 44.7289 24.4012 43.9008 24.2829C43.0964 24.1646 42.2801 24.0108 41.452 23.8215C40.6239 23.6086 39.8668 23.301 39.1807 22.8988C38.4946 22.4966 37.9386 21.9524 37.5127 21.2663C37.1105 20.5802 36.9094 19.6929 36.9094 18.6046C36.9094 17.398 37.2524 16.3333 37.9386 15.4105C38.6483 14.4878 39.6657 13.7662 40.9906 13.2457C42.3156 12.7015 43.9008 12.4294 45.7462 12.4294C47.0475 12.4294 48.3725 12.5714 49.7211 12.8553C51.0697 13.1392 52.1935 13.5533 53.0926 14.0974L51.2471 18.0368C50.3244 17.4926 49.3898 17.1259 48.4434 16.9366C47.5207 16.7237 46.6216 16.6172 45.7462 16.6172C44.5159 16.6172 43.6169 16.7828 43.049 17.114C42.4812 17.4453 42.1973 17.8711 42.1973 18.3917C42.1973 18.8648 42.3984 19.2197 42.8006 19.4563C43.2265 19.6929 43.7825 19.8822 44.4686 20.0242C45.1547 20.1661 45.9 20.2963 46.7045 20.4146C47.5325 20.5092 48.3606 20.663 49.1887 20.8759C50.0168 21.0889 50.7621 21.3964 51.4246 21.7986C52.1107 22.1772 52.6667 22.7095 53.0926 23.3957C53.5184 24.0581 53.7314 24.9335 53.7314 26.0219C53.7314 27.2049 53.3765 28.2577 52.6667 29.1805C51.9569 30.0795 50.9277 30.7893 49.5791 31.3098C48.2542 31.8303 46.6335 32.0906 44.717 32.0906Z" fill="#15171C"/>
+            <path d="M59.2411 32.0906C58.2947 32.0906 57.4785 31.7712 56.7923 31.1324C56.1299 30.4699 55.7986 29.63 55.7986 28.6126C55.7986 27.5953 56.1299 26.779 56.7923 26.1638C57.4785 25.525 58.2947 25.2056 59.2411 25.2056C60.2111 25.2056 61.0274 25.525 61.6899 26.1638C62.3523 26.779 62.6836 27.5953 62.6836 28.6126C62.6836 29.63 62.3523 30.4699 61.6899 31.1324C61.0274 31.7712 60.2111 32.0906 59.2411 32.0906Z" fill="#15171C"/>
+            <path d="M66.4355 31.8067V12.7133H71.9718V31.8067H66.4355ZM69.2037 10.0516C68.1863 10.0516 67.3582 9.75589 66.7194 9.1644C66.0806 8.5729 65.7612 7.83946 65.7612 6.96405C65.7612 6.08864 66.0806 5.35519 66.7194 4.7637C67.3582 4.17221 68.1863 3.87646 69.2037 3.87646C70.221 3.87646 71.0491 4.16038 71.6879 4.72821C72.3267 5.27239 72.6461 5.98217 72.6461 6.85758C72.6461 7.78031 72.3267 8.54924 71.6879 9.1644C71.0728 9.75589 70.2447 10.0516 69.2037 10.0516Z" fill="#15171C"/>
+            <path d="M85.3081 32.0906C83.51 32.0906 81.8893 31.6884 80.4461 30.8839C79.0028 30.0559 77.8553 28.9084 77.0036 27.4415C76.1755 25.9746 75.7614 24.2474 75.7614 22.26C75.7614 20.2489 76.1755 18.51 77.0036 17.0431C77.8553 15.5762 79.0028 14.4405 80.4461 13.6361C81.8893 12.8316 83.51 12.4294 85.3081 12.4294C86.917 12.4294 88.3247 12.7843 89.5314 13.4941C90.738 14.2039 91.6726 15.2804 92.335 16.7237C92.9975 18.1669 93.3287 20.0123 93.3287 22.26C93.3287 24.484 93.0093 26.3295 92.3705 27.7964C91.7317 29.2396 90.809 30.3161 89.6023 31.0259C88.4194 31.7357 86.9879 32.0906 85.3081 32.0906ZM86.2663 27.5479C87.1654 27.5479 87.9816 27.335 88.7151 26.9091C89.4485 26.4833 90.0282 25.8799 90.4541 25.0992C90.9036 24.2947 91.1284 23.3484 91.1284 22.26C91.1284 21.148 90.9036 20.2016 90.4541 19.4209C90.0282 18.6401 89.4485 18.0368 88.7151 17.6109C87.9816 17.185 87.1654 16.9721 86.2663 16.9721C85.3436 16.9721 84.5155 17.185 83.7821 17.6109C83.0486 18.0368 82.4571 18.6401 82.0076 19.4209C81.5817 20.2016 81.3688 21.148 81.3688 22.26C81.3688 23.3484 81.5817 24.2947 82.0076 25.0992C82.4571 25.8799 83.0486 26.4833 83.7821 26.9091C84.5155 27.335 85.3436 27.5479 86.2663 27.5479ZM91.2703 31.8067V27.9028L91.3768 22.2245L91.0219 16.5817V5.47349H96.5583V31.8067H91.2703Z" fill="#15171C"/>
+          </svg>
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex items-center gap-1 font-worksans text-[14.5px] font-medium text-ink">
+          <!-- Dropdown Produk -->
+          <div class="relative group">
+            <button class="flex items-center gap-1 px-3 py-2 rounded-lg hover:bg-paper hover:text-brand transition-colors">
+              <span data-i18n="nav_products">Produk</span>
+              <svg class="w-4 h-4 text-mute group-hover:text-brand transition-transform group-hover:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="absolute left-0 top-full pt-2 w-72 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200">
+              <div class="bg-white rounded-2xl shadow-xl border border-line p-3 space-y-1">
+                <a href="#hero-tool-section" onclick="switchToolTab('shortener')" class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-paper transition-colors group/item">
+                  <div class="p-2 rounded-lg bg-red-50 text-brand">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+                  </div>
+                  <div>
+                    <div class="font-semibold text-ink text-sm group-hover/item:text-brand">Link Shortener</div>
+                    <div class="text-xs text-mute" data-i18n="prod_shortener_desc">Perpendek URL &amp; analitik klik real-time</div>
+                  </div>
+                </a>
+                <a href="#hero-tool-section" onclick="switchToolTab('microsite')" class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-paper transition-colors group/item">
+                  <div class="p-2 rounded-lg bg-orange-50 text-orange-600">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg>
+                  </div>
+                  <div>
+                    <div class="font-semibold text-ink text-sm group-hover/item:text-brand">Microsite &amp; Bio Link</div>
+                    <div class="text-xs text-mute" data-i18n="prod_microsite_desc">Satu link untuk semua media sosial &amp; katalog</div>
+                  </div>
+                </a>
+                <a href="#hero-tool-section" onclick="switchToolTab('qrcode')" class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-paper transition-colors group/item">
+                  <div class="p-2 rounded-lg bg-blue-50 text-blue-600">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"/></svg>
+                  </div>
+                  <div>
+                    <div class="font-semibold text-ink text-sm group-hover/item:text-brand">QR Code Dinamis</div>
+                    <div class="text-xs text-mute" data-i18n="prod_qr_desc">Ganti tujuan tanpa perlu cetak ulang</div>
+                  </div>
+                </a>
+                <a href="#bento-section" class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-paper transition-colors group/item">
+                  <div class="p-2 rounded-lg bg-emerald-50 text-emerald-600">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+                  </div>
+                  <div>
+                    <div class="font-semibold text-ink text-sm group-hover/item:text-brand">s.id Shop</div>
+                    <div class="text-xs text-mute" data-i18n="prod_shop_desc">Jual produk digital, template, e-book</div>
+                  </div>
+                </a>
+                <a href="#bento-section" class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-paper transition-colors group/item">
+                  <div class="p-2 rounded-lg bg-purple-50 text-purple-600">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                  </div>
+                  <div>
+                    <div class="font-semibold text-ink text-sm group-hover/item:text-brand">AgentS AI</div>
+                    <div class="text-xs text-mute" data-i18n="prod_agents_desc">Asisten AI pembuat konten &amp; analitik</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dropdown Solusi -->
+          <div class="relative group">
+            <button class="flex items-center gap-1 px-3 py-2 rounded-lg hover:bg-paper hover:text-brand transition-colors">
+              <span data-i18n="nav_solutions">Solusi</span>
+              <svg class="w-4 h-4 text-mute group-hover:text-brand transition-transform group-hover:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="absolute left-0 top-full pt-2 w-72 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200">
+              <div class="bg-white rounded-2xl shadow-xl border border-line p-3 space-y-1">
+                <a href="#solutions-section" onclick="switchSolutionTab(0)" class="block p-2.5 rounded-xl hover:bg-paper">
+                  <div class="font-semibold text-ink text-sm hover:text-brand" data-i18n="sol_tab_creator">Kreator Konten</div>
+                  <div class="text-xs text-mute" data-i18n="sol_sub_creator">Bio link lengkap dengan toko digital &amp; portfolio</div>
+                </a>
+                <a href="#solutions-section" onclick="switchSolutionTab(1)" class="block p-2.5 rounded-xl hover:bg-paper">
+                  <div class="font-semibold text-ink text-sm hover:text-brand" data-i18n="sol_tab_umkm">UMKM &amp; Penjual Online</div>
+                  <div class="text-xs text-mute" data-i18n="sol_sub_umkm">Link WhatsApp, Shopee, katalog &amp; QR meja kasir</div>
+                </a>
+                <a href="#solutions-section" onclick="switchSolutionTab(2)" class="block p-2.5 rounded-xl hover:bg-paper">
+                  <div class="font-semibold text-ink text-sm hover:text-brand" data-i18n="sol_tab_marketing">Tim Marketing</div>
+                  <div class="text-xs text-mute" data-i18n="sol_sub_marketing">Pelacakan multi-channel &amp; perbandingan kampanye</div>
+                </a>
+                <a href="#solutions-section" onclick="switchSolutionTab(3)" class="block p-2.5 rounded-xl hover:bg-paper">
+                  <div class="font-semibold text-ink text-sm hover:text-brand" data-i18n="sol_tab_agency">Agensi &amp; Freelancer</div>
+                  <div class="text-xs text-mute" data-i18n="sol_sub_agency">Banyak klien, custom domain, satu dashboard</div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <a href="#partners-section" class="px-3 py-2 rounded-lg hover:bg-paper hover:text-brand transition-colors" data-i18n="nav_trusted">Terpercaya &amp; Aman</a>
+          <a href="#pricing-section" class="px-3 py-2 rounded-lg hover:bg-paper hover:text-brand transition-colors" data-i18n="nav_pricing">Berlangganan</a>
+        </nav>
+      </div>
+
+      <!-- Right Controls: Language & Auth -->
+      <div class="flex items-center gap-3">
+        <!-- Language Switcher Button -->
+        <button id="lang-toggle-btn" onclick="toggleLanguage()" class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-full border border-line bg-paper text-xs font-semibold text-ink hover:border-gray-400 transition-colors" title="Ganti Bahasa / Switch Language">
+          <span id="lang-indicator" class="flex items-center gap-1">
+            <span class="w-2 h-2 rounded-full bg-emeraldBrand"></span>
+            <span id="lang-label" class="font-mono">ID</span>
+          </span>
+          <span class="text-mute text-[10px]">| EN</span>
+        </button>
+
+        <!-- Masuk / Daftar Button -->
+        <button onclick="openAuthModal()" class="inline-flex items-center justify-center font-montserrat font-semibold text-[13.5px] tracking-tight bg-brand hover:bg-brand-dark text-white px-5 py-2.5 rounded-xl transition-all shadow-sm hover:shadow active:scale-95" data-i18n="btn_login_signup">
+          Masuk / Daftar
+        </button>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button onclick="toggleMobileNav()" class="md:hidden p-2 rounded-lg text-ink hover:bg-paper">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-nav" class="hidden md:hidden border-t border-line bg-white px-4 py-4 space-y-3 font-worksans text-sm">
+      <a href="#hero-tool-section" onclick="toggleMobileNav()" class="block py-2 font-medium text-ink hover:text-brand">Shortener &amp; Bio Link</a>
+      <a href="#bento-section" onclick="toggleMobileNav()" class="block py-2 font-medium text-ink hover:text-brand">7 Alat s.id</a>
+      <a href="#solutions-section" onclick="toggleMobileNav()" class="block py-2 font-medium text-ink hover:text-brand">Solusi Pengguna</a>
+      <a href="#pricing-section" onclick="toggleMobileNav()" class="block py-2 font-medium text-ink hover:text-brand">Daftar Harga</a>
+      <a href="#faq-section" onclick="toggleMobileNav()" class="block py-2 font-medium text-ink hover:text-brand">FAQ</a>
+      <div class="pt-2 border-t border-line">
+        <button onclick="openAuthModal(); toggleMobileNav();" class="w-full text-center bg-brand text-white py-2.5 rounded-xl font-semibold">Masuk / Daftar Akun</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================= -->
+  <!-- HERO SECTION -->
+  <!-- ========================================================================= -->
+  <section class="relative w-full overflow-hidden pt-12 pb-16 md:pt-20 md:pb-24 hero-glow border-b border-line/60" id="main-landing">
+    <!-- Subtle Background Decor -->
+    <div class="absolute inset-0 -z-10 pointer-events-none opacity-40">
+      <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-gradient-to-b from-red-100/60 via-orange-50/40 to-transparent blur-3xl rounded-full"></div>
+    </div>
+
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-6">
+      
+      <!-- Eyebrow & Headlines -->
+      <div class="text-center max-w-3xl mx-auto space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-50 border border-red-100 text-brand text-xs font-semibold tracking-wide uppercase">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          <span data-i18n="hero_eyebrow">Solusi Link Terlengkap #1 di Indonesia</span>
+        </div>
+
+        <h1 class="font-heading font-extrabold text-[32px] sm:text-[44px] md:text-[52px] leading-[1.15] tracking-tight text-ink" data-i18n="hero_title">
+          Semua link jualanmu di satu tempat. Kelihatan mana yang paling laku.
+        </h1>
+
+        <p class="font-worksans text-base sm:text-lg md:text-[19px] leading-relaxed text-body max-w-2xl mx-auto" data-i18n="hero_subtitle">
+          Bikin link pendek, halaman bio, QR Code, dan toko digital dari satu akun. Lalu cek berapa yang klik, dari kota mana, dan pakai HP apa.
+        </p>
+      </div>
+
+      <!-- ===================================================================== -->
+      <!-- INTERACTIVE MULTI-TOOL BOX (Shortener / QR Code / Microsite) -->
+      <!-- ===================================================================== -->
+      <div id="hero-tool-section" class="mt-10 max-w-2xl mx-auto bg-white rounded-[24px] border border-line shadow-[0_20px_50px_rgba(21,23,28,0.06),0_1px_3px_rgba(21,23,28,0.04)] p-4 sm:p-6 transition-all duration-300">
+        
+        <!-- Tool Tabs -->
+        <div class="flex items-center justify-between border-b border-line pb-3 mb-5">
+          <div class="flex items-center gap-1.5 sm:gap-2">
+            <!-- Shortener Tab -->
+            <button id="tab-btn-shortener" onclick="switchToolTab('shortener')" class="flex items-center gap-2 px-3.5 py-2 rounded-xl text-sm font-semibold transition-all bg-brand text-white shadow-sm">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+              <span>Shortener</span>
+            </button>
+
+            <!-- QR Code Tab -->
+            <button id="tab-btn-qrcode" onclick="switchToolTab('qrcode')" class="flex items-center gap-2 px-3.5 py-2 rounded-xl text-sm font-semibold text-body hover:bg-paper transition-all">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"/></svg>
+              <span>QR Code</span>
+            </button>
+
+            <!-- Microsite Tab -->
+            <button id="tab-btn-microsite" onclick="switchToolTab('microsite')" class="flex items-center gap-2 px-3.5 py-2 rounded-xl text-sm font-semibold text-body hover:bg-paper transition-all">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg>
+              <span>Microsite</span>
+            </button>
+          </div>
+
+          <span class="text-xs font-medium text-mute hidden sm:inline" data-i18n="tool_free_badge">Coba Gratis Langsung</span>
+        </div>
+
+        <!-- ======================= -->
+        <!-- TAB 1: SHORTENER CONTENT -->
+        <!-- ======================= -->
+        <div id="panel-shortener" class="space-y-4">
+          <form id="shortener-form" onsubmit="handleShortenSubmit(event)" class="space-y-3">
+            <div class="relative flex flex-col sm:flex-row items-stretch sm:items-center gap-2 p-1.5 rounded-2xl border border-line bg-paper/60 focus-within:border-brand focus-within:bg-white focus-within:ring-2 focus-within:ring-brand/10 transition-all">
+              <div class="flex items-center flex-1 px-3 py-2">
+                <svg class="w-5 h-5 text-mute mr-2.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+                <input 
+                  type="url" 
+                  id="long-url-input" 
+                  required
+                  placeholder="Tempel link panjang WhatsApp, Shopee, atau Google Form..." 
+                  class="w-full bg-transparent font-worksans text-sm sm:text-base text-ink placeholder:text-mute outline-none"
+                  value="https://shopee.co.id/toko-kopi-nusantara/promo-spesial-diskon-50"
+                />
+              </div>
+
+              <!-- Submit Button -->
+              <button 
+                type="submit" 
+                id="shorten-btn"
+                class="font-montserrat font-semibold text-sm bg-brand hover:bg-brand-dark text-white px-6 py-3 rounded-xl transition-all flex items-center justify-center gap-2 shrink-0 active:scale-95 shadow-sm"
+              >
+                <span id="shorten-btn-text" data-i18n="btn_shorten">Perpendek</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </button>
+            </div>
+
+            <!-- Custom Alias Input Row -->
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 p-1.5 rounded-2xl border border-line bg-white shadow-sm">
+              <div class="flex items-center flex-1 px-3 py-1.5">
+                <span class="font-mono font-bold text-brand mr-1 select-none">https://m.id/</span>
+                <input 
+                  type="text" 
+                  id="custom-alias-input" 
+                  value="custom" 
+                  placeholder="custom" 
+                  class="w-full bg-transparent font-mono text-sm text-ink outline-none placeholder:text-mute font-semibold"
+                />
+              </div>
+              <span class="text-[11px] text-mute px-3 sm:border-l border-line font-medium hidden sm:inline" data-i18n="alias_toggle">Kustomisasi alias: m.id/custom</span>
+            </div>
+          </form>
+
+          <!-- Result Container (Appears after shortening) -->
+          <div id="shorten-result" class="space-y-4 pt-2">
+            <div class="p-4 rounded-2xl bg-paper border border-line flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 animate-toast">
+              <div class="min-w-0">
+                <div class="text-xs text-mute font-medium" data-i18n="result_label">Link m.id kamu sudah siap:</div>
+                <div class="flex items-center gap-2 mt-0.5">
+                  <a id="result-short-url" href="#" target="_blank" class="font-montserrat font-bold text-brand hover:underline text-base sm:text-lg truncate">https://m.id/custom</a>
+                  <span class="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-100 text-emerald-800">Aktif</span>
+                </div>
+                <div class="text-[11px] text-mute truncate mt-0.5" id="result-orig-url">shopee.co.id/toko-kopi-nusantara...</div>
+              </div>
+
+              <!-- Action Buttons -->
+              <div class="flex items-center gap-2 shrink-0">
+                <button onclick="copyShortLink()" id="copy-btn" class="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-white border border-line hover:border-brand font-semibold text-xs text-ink transition-colors shadow-sm">
+                  <svg id="copy-icon" class="w-4 h-4 text-mute" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                  <span id="copy-text" data-i18n="btn_copy">Salin</span>
+                </button>
+                <button onclick="toggleQRModal()" class="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-white border border-line hover:border-brand font-semibold text-xs text-ink transition-colors shadow-sm">
+                  <svg class="w-4 h-4 text-mute" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"/></svg>
+                  <span>QR</span>
+                </button>
+                <button onclick="simulateClick()" class="flex items-center gap-1 px-3 py-2 rounded-xl bg-red-50 text-brand border border-red-200 font-semibold text-xs hover:bg-red-100 transition-colors" title="Simulasi Pengunjung Mengklik Link">
+                  <span>+1 Klik</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Live Analytics Simulation Bar -->
+            <div class="p-4 rounded-2xl bg-white border border-line space-y-3">
+              <div class="flex items-center justify-between text-xs font-semibold text-ink">
+                <span class="flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-emeraldBrand animate-pulse"></span>
+                  <span data-i18n="sim_live_stats">Statistik Klik Real-Time:</span>
+                </span>
+                <span id="stat-click-count" class="text-sm font-bold text-brand font-montserrat">148 Klik</span>
+              </div>
+              
+              <!-- City & Device breakdown -->
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs pt-1">
+                <div class="p-2 rounded-xl bg-paper">
+                  <span class="text-mute block text-[11px]" data-i18n="stat_top_city">Kota Teratas</span>
+                  <span class="font-semibold text-ink">Jakarta (58%)</span>
+                </div>
+                <div class="p-2 rounded-xl bg-paper">
+                  <span class="text-mute block text-[11px]" data-i18n="stat_top_device">Perangkat</span>
+                  <span class="font-semibold text-ink">HP / Android (72%)</span>
+                </div>
+                <div class="p-2 rounded-xl bg-paper col-span-2 sm:col-span-1">
+                  <span class="text-mute block text-[11px]" data-i18n="stat_top_referrer">Sumber Trafik</span>
+                  <span class="font-semibold text-ink">Instagram / WA</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ======================= -->
+        <!-- TAB 2: QR CODE CONTENT -->
+        <!-- ======================= -->
+        <div id="panel-qrcode" class="hidden space-y-5">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 items-center">
+            <!-- Left: Options -->
+            <div class="space-y-4">
+              <div>
+                <label class="block text-xs font-semibold text-ink mb-1" data-i18n="qr_target_label">Link / Teks Tujuan QR</label>
+                <input 
+                  type="text" 
+                  id="qr-input-text" 
+                  oninput="generateCustomQR()"
+                  value="https://m.id/custom"
+                  class="w-full px-3 py-2 rounded-xl border border-line bg-paper text-sm text-ink outline-none focus:border-brand"
+                />
+              </div>
+
+              <!-- Color Chooser -->
+              <div>
+                <label class="block text-xs font-semibold text-ink mb-1.5" data-i18n="qr_color_label">Warna QR Code</label>
+                <div class="flex items-center gap-2">
+                  <button onclick="setQRColor('#cc3333')" class="w-7 h-7 rounded-full bg-[#cc3333] border-2 border-white shadow-sm hover:scale-110 transition-transform" title="Brand Red"></button>
+                  <button onclick="setQRColor('#15171c')" class="w-7 h-7 rounded-full bg-[#15171c] border-2 border-white shadow-sm hover:scale-110 transition-transform" title="Midnight Black"></button>
+                  <button onclick="setQRColor('#155dfc')" class="w-7 h-7 rounded-full bg-[#155dfc] border-2 border-white shadow-sm hover:scale-110 transition-transform" title="Royal Blue"></button>
+                  <button onclick="setQRColor('#15803d')" class="w-7 h-7 rounded-full bg-[#15803d] border-2 border-white shadow-sm hover:scale-110 transition-transform" title="Forest Green"></button>
+                </div>
+              </div>
+
+              <!-- Options -->
+              <div class="space-y-1 text-xs text-mute">
+                <div class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-emeraldBrand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span data-i18n="qr_feat_1">QR Dinamis: Link bisa diubah kapan saja</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-emeraldBrand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span data-i18n="qr_feat_2">Resolusi tinggi siap cetak (Meja, Banner, Brosur)</span>
+                </div>
+              </div>
+
+              <div class="pt-1">
+                <button onclick="downloadQRCode()" class="w-full py-2.5 px-4 rounded-xl bg-brand hover:bg-brand-dark text-white font-semibold text-xs transition-colors flex items-center justify-center gap-2">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                  <span data-i18n="btn_download_qr">Unduh QR Code (PNG)</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Right: Live Canvas Preview -->
+            <div class="flex flex-col items-center justify-center p-4 rounded-2xl bg-paper border border-line">
+              <div id="qrcode-container" class="p-3 bg-white rounded-xl shadow-sm border border-line flex items-center justify-center min-w-[140px] min-h-[140px]"></div>
+              <span class="text-[11px] font-mono text-mute mt-2" id="qr-caption">m.id/custom</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ======================= -->
+        <!-- TAB 3: MICROSITE CONTENT -->
+        <!-- ======================= -->
+        <div id="panel-microsite" class="hidden space-y-4">
+          <div class="p-4 rounded-2xl bg-paper border border-line space-y-3">
+            <div>
+              <label class="block text-xs font-semibold text-ink mb-1" data-i18n="micro_handle_label">Klaim Alamat Bio Link Kamu</label>
+              <div class="flex items-center gap-2 p-1.5 rounded-xl bg-white border border-line">
+                <span class="font-bold text-brand font-mono pl-2">m.id/</span>
+                <input 
+                  type="text" 
+                  id="microsite-handle-input" 
+                  oninput="updateMicrositePreview()"
+                  value="tokokopikamu"
+                  placeholder="namamu-atau-brand" 
+                  class="flex-1 bg-transparent text-ink font-semibold outline-none text-sm"
+                />
+                <button onclick="openAuthModal()" class="px-4 py-2 rounded-lg bg-brand text-white font-semibold text-xs shrink-0 hover:bg-brand-dark">
+                  <span data-i18n="btn_claim">Klaim</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Quick Theme Chooser -->
+            <div class="flex items-center gap-2 text-xs">
+              <span class="text-mute" data-i18n="micro_theme">Pilih Tema:</span>
+              <button onclick="setMicroTheme('sunset')" class="px-2.5 py-1 rounded-full bg-orange-100 text-orange-800 font-medium">Sunset</button>
+              <button onclick="setMicroTheme('dark')" class="px-2.5 py-1 rounded-full bg-gray-900 text-white font-medium">Dark</button>
+              <button onclick="setMicroTheme('matcha')" class="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 font-medium">Matcha</button>
+            </div>
+          </div>
+
+          <!-- Interactive Mobile Phone Preview Inside Hero -->
+          <div class="flex items-center justify-center pt-2">
+            <div id="micro-phone-card" class="w-full max-w-sm rounded-[24px] border-2 border-line bg-gradient-to-b from-orange-50 to-white p-5 shadow-md text-center space-y-3 transition-colors">
+              <div class="w-14 h-14 rounded-full bg-brand/20 border-2 border-white shadow mx-auto flex items-center justify-center text-xl font-bold text-brand" id="micro-avatar">
+                ☕
+              </div>
+              <div>
+                <h4 class="font-bold text-ink text-sm" id="micro-title">@tokokopikamu</h4>
+                <p class="text-xs text-mute mt-0.5" id="micro-desc">Kopi Asli Nusantara &bull; Buka Setiap Hari</p>
+              </div>
+              <div class="space-y-2 pt-1 text-xs font-semibold">
+                <a href="#" class="block p-2.5 rounded-xl bg-white shadow-sm border border-line/80 hover:border-brand text-ink transition-colors flex items-center justify-between">
+                  <span>💬 Chat Pesan via WhatsApp</span>
+                  <span class="text-[10px] text-mute">1.2k klik</span>
+                </a>
+                <a href="#" class="block p-2.5 rounded-xl bg-white shadow-sm border border-line/80 hover:border-brand text-ink transition-colors flex items-center justify-between">
+                  <span>🛍️ Toko Online Shopee</span>
+                  <span class="text-[10px] text-mute">840 klik</span>
+                </a>
+                <a href="#" class="block p-2.5 rounded-xl bg-white shadow-sm border border-line/80 hover:border-brand text-ink transition-colors flex items-center justify-between">
+                  <span>📄 Daftar Menu &amp; Lokasi</span>
+                  <span class="text-[10px] text-mute">420 klik</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trust badges under tools -->
+        <div class="pt-4 border-t border-line/80 flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs font-medium text-mute">
+          <div class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-emeraldBrand shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+            <span data-i18n="badge_no_signup">Tanpa daftar akun</span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-emeraldBrand shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+            <span data-i18n="badge_no_cc">Tidak perlu kartu kredit</span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-emeraldBrand shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+            <span data-i18n="badge_free_tier">Paket gratis tersedia</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- PARTNERS & MEDIA COVERAGE SECTION -->
+  <!-- ========================================================================= -->
+  <section id="partners-section" class="w-full border-b border-line bg-paper/40 py-8">
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-6 space-y-6">
+      
+      <!-- Top: Official Partners -->
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4 border-b border-line/80 pb-6">
+        <div class="text-xs font-bold uppercase tracking-wider text-mute font-worksans" data-i18n="partner_official">
+          Partner Resmi:
+        </div>
+        <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-10">
+          <!-- PANDI -->
+          <a href="https://pandi.id" target="_blank" class="flex items-center gap-2 group transition-opacity hover:opacity-80">
+            <img src="./assets/partners/pandi.png" onerror="this.src='https://home.s.id/images/partners/partners_pandi.png'" alt="PANDI" class="h-7 object-contain">
+            <span class="text-xs font-semibold text-ink group-hover:text-brand">PANDI (.id Registry)</span>
+          </a>
+          <!-- EID -->
+          <div class="flex items-center gap-2 group">
+            <img src="./assets/partners/eid.png" onerror="this.src='https://home.s.id/images/partners/partners_eid.png'" alt="EID" class="h-6 object-contain">
+            <span class="text-xs font-semibold text-ink">EID Terverifikasi</span>
+          </div>
+          <!-- SIDEX -->
+          <div class="flex items-center gap-2 group">
+            <img src="./assets/partners/sidex.png" onerror="this.src='https://home.s.id/images/partners/partners_sidex.png'" alt="SIDEX" class="h-6 object-contain">
+            <span class="text-xs font-semibold text-ink">SIDEX URL AI Scanner</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom: Media Mentions -->
+      <div class="flex flex-col lg:flex-row items-center gap-4">
+        <span class="text-xs font-semibold uppercase tracking-wider text-mute shrink-0" data-i18n="media_featured">s.id di Media:</span>
+        <div class="flex flex-wrap items-center justify-center lg:justify-between w-full gap-4 sm:gap-6 opacity-80 grayscale hover:grayscale-0 transition-all">
+          <img src="./assets/featured/detikinet.png" onerror="this.src='https://home.s.id/images/featured/detikinet.png'" alt="detikINET" class="h-5 sm:h-6 object-contain">
+          <img src="./assets/featured/antaranews.png" onerror="this.src='https://home.s.id/images/featured/antaranews.png'" alt="ANTARA News" class="h-5 sm:h-6 object-contain">
+          <img src="./assets/featured/tempo-co.png" onerror="this.src='https://home.s.id/images/featured/tempo-co.png'" alt="Tempo.co" class="h-5 sm:h-6 object-contain">
+          <img src="./assets/featured/kumparan.png" onerror="this.src='https://home.s.id/images/featured/kumparan.png'" alt="kumparan" class="h-5 sm:h-6 object-contain">
+          <img src="./assets/featured/liputan6.png" onerror="this.src='https://home.s.id/images/featured/liputan6.png'" alt="Liputan6" class="h-5 sm:h-6 object-contain">
+          <img src="./assets/featured/tirto.png" onerror="this.src='https://home.s.id/images/featured/tirto.png'" alt="Tirto.id" class="h-5 sm:h-6 object-contain">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- BENTO GRID SECTION: "Tujuh alat, cukup satu akun." -->
+  <!-- ========================================================================= -->
+  <section id="bento-section" class="w-full py-16 sm:py-24 bg-white">
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-6">
+      
+      <!-- Section Title -->
+      <div class="max-w-2xl mx-auto text-center space-y-3 mb-12 sm:mb-16">
+        <h2 class="font-heading font-extrabold text-[28px] sm:text-[38px] tracking-tight text-ink" data-i18n="bento_title">
+          Tujuh alat, cukup satu akun.
+        </h2>
+        <p class="font-worksans text-base sm:text-lg text-body" data-i18n="bento_subtitle">
+          Nggak perlu langganan pemendek link, pembuat halaman, alat QR, toko online, formulir, dan asisten AI sendiri-sendiri.
+        </p>
+      </div>
+
+      <!-- Bento Grid Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Card 1: Microsite (Featured Double Height/Width) -->
+        <article class="relative flex flex-col justify-between rounded-[28px] border border-line bg-white p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 md:col-span-2 lg:col-span-1">
+          <div class="w-full rounded-[20px] bg-gradient-to-b from-[#FBEEEA] to-[#FDF6F3] p-4 flex items-center justify-center overflow-hidden h-[240px]">
+            <img src="./assets/bento/microsite-phone.png" onerror="this.src='https://home.s.id/images/enhanced/home-lo/microsite-phone@2x.png'" alt="Microsite Phone Mockup" class="max-h-[220px] object-contain drop-shadow-md">
+          </div>
+          <div class="mt-6 space-y-2">
+            <h3 class="font-heading font-bold text-xl text-ink hover:text-brand transition-colors">
+              <a href="#hero-tool-section" onclick="switchToolTab('microsite')">Microsite dan bio link tanpa coding</a>
+            </h3>
+            <p class="font-worksans text-sm text-body" data-i18n="bento_card1_desc">
+              Kumpulkan link, katalog, dan portofolio di satu halaman untuk bio Instagram atau TikTok.
+            </p>
+          </div>
+        </article>
+
+        <!-- Card 2: Link pendek yang gampang diingat -->
+        <article class="relative flex flex-col justify-between rounded-[28px] border border-line bg-white p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+          <div class="w-full rounded-[20px] bg-gradient-to-b from-[#FBEEEA] to-[#FDF6F3] p-4 flex items-center justify-center h-[240px]">
+            <!-- Live interactive link click preview -->
+            <div class="w-full max-w-[280px] bg-white rounded-xl shadow-md border border-line p-3 space-y-2 text-xs">
+              <div class="flex items-center justify-between border-b border-line pb-2">
+                <div class="truncate">
+                  <div class="font-semibold text-brand font-mono">m.id/wa-pesan</div>
+                  <div class="text-[10px] text-mute">wa.me/62812...</div>
+                </div>
+                <div class="text-right">
+                  <span class="font-bold text-ink">12.480</span>
+                  <span class="text-[10px] text-mute block">klik</span>
+                </div>
+              </div>
+              <div class="flex items-center justify-between border-b border-line pb-2">
+                <div class="truncate">
+                  <div class="font-semibold text-brand font-mono">m.id/toko-shopee</div>
+                  <div class="text-[10px] text-mute">shopee.co.id/...</div>
+                </div>
+                <div class="text-right">
+                  <span class="font-bold text-ink">3.216</span>
+                  <span class="text-[10px] text-mute block">klik</span>
+                </div>
+              </div>
+              <div class="flex items-center justify-between">
+                <div class="truncate">
+                  <div class="font-semibold text-brand font-mono">m.id/survey-2026</div>
+                  <div class="text-[10px] text-mute">forms.gle/8sK...</div>
+                </div>
+                <div class="text-right">
+                  <span class="font-bold text-ink">1.904</span>
+                  <span class="text-[10px] text-mute block">klik</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-6 space-y-2">
+            <h3 class="font-heading font-bold text-xl text-ink hover:text-brand transition-colors">
+              <a href="#hero-tool-section" onclick="switchToolTab('shortener')">Link pendek yang gampang diingat</a>
+            </h3>
+            <p class="font-worksans text-sm text-body" data-i18n="bento_card2_desc">
+              Ubah link WhatsApp, Shopee, atau Google Form jadi alamat s.id yang enak dibagikan.
+            </p>
+          </div>
+        </article>
+
+        <!-- Card 3: QR Code dinamis yang bisa diganti isinya -->
+        <article class="relative flex flex-col justify-between rounded-[28px] border border-line bg-white p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+          <div class="w-full rounded-[20px] bg-gradient-to-b from-[#FBEEEA] to-[#FDF6F3] p-4 flex items-center justify-center overflow-hidden h-[240px]">
+            <img src="./assets/bento/qr-replace.png" onerror="this.src='https://home.s.id/images/enhanced/home-lo/qr-replace@2x.png'" alt="QR Code Replace Mockup" class="max-h-[200px] object-contain">
+          </div>
+          <div class="mt-6 space-y-2">
+            <h3 class="font-heading font-bold text-xl text-ink hover:text-brand transition-colors">
+              <a href="#hero-tool-section" onclick="switchToolTab('qrcode')">QR Code yang bisa diganti isinya</a>
+            </h3>
+            <p class="font-worksans text-sm text-body" data-i18n="bento_card3_desc">
+              Menu restoran berubah? Di paket berbayar, ganti link tujuannya tanpa cetak ulang.
+            </p>
+          </div>
+        </article>
+
+        <!-- Card 4: Jual produk digital dari microsite (Shop) -->
+        <article class="relative flex flex-col justify-between rounded-[28px] border border-line bg-white p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+          <div class="w-full rounded-[20px] bg-gradient-to-b from-[#FBEEEA] to-[#FDF6F3] p-4 flex items-center justify-center overflow-hidden h-[240px]">
+            <img src="./assets/bento/shop-checkout.png" onerror="this.src='https://home.s.id/images/enhanced/home-lo/shop-checkout@2x.png'" alt="s.id Shop Mockup" class="max-h-[210px] object-contain">
+          </div>
+          <div class="mt-6 space-y-2">
+            <h3 class="font-heading font-bold text-xl text-ink">
+              Jual produk digital dari microsite
+            </h3>
+            <p class="font-worksans text-sm text-body" data-i18n="bento_card4_desc">
+              E-book, template, atau preset langsung bisa dibeli. Pembayaran diverifikasi otomatis, dan saldonya bisa kamu tarik ke rekening.
+            </p>
+          </div>
+        </article>
+
+        <!-- Card 5: Tahu siapa yang klik (Analytics) -->
+        <article class="relative flex flex-col justify-between rounded-[28px] border border-line bg-white p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+          <div class="w-full rounded-[20px] bg-gradient-to-b from-[#FBEEEA] to-[#FDF6F3] p-4 flex items-center justify-center overflow-hidden h-[240px]">
+            <img src="./assets/bento/analytics.png" onerror="this.src='https://home.s.id/images/enhanced/home-lo/analytics@2x.png'" alt="Analytics Dashboard Mockup" class="max-h-[210px] object-contain">
+          </div>
+          <div class="mt-6 space-y-2">
+            <h3 class="font-heading font-bold text-xl text-ink">
+              Tahu siapa yang klik
+            </h3>
+            <p class="font-worksans text-sm text-body" data-i18n="bento_card5_desc">
+              Lihat jumlah klik, kota, perangkat, dan waktu kunjungan dari satu dashboard.
+            </p>
+          </div>
+        </article>
+
+        <!-- Card 6: Tinggal minta ke AgentS (AI) -->
+        <article class="relative flex flex-col justify-between rounded-[28px] border border-line bg-white p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+          <div class="w-full rounded-[20px] bg-gradient-to-b from-[#FBEEEA] to-[#FDF6F3] p-4 flex items-center justify-center overflow-hidden h-[240px]">
+            <img src="./assets/bento/agents-chat.png" onerror="this.src='https://home.s.id/images/enhanced/home-lo/agents-chat@2x.png'" alt="AgentS AI Chat Mockup" class="max-h-[210px] object-contain">
+          </div>
+          <div class="mt-6 space-y-2">
+            <div class="flex items-center gap-2">
+              <h3 class="font-heading font-bold text-xl text-ink">
+                Tinggal minta ke AgentS
+              </h3>
+              <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-purple-100 text-purple-700">AI</span>
+            </div>
+            <p class="font-worksans text-sm text-body" data-i18n="bento_card6_desc">
+              Minta buat link, tanya angka, atau bikin gambar lewat chat. Semua pengguna bisa memakai AgentS.
+            </p>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Card 7: Formulir yang langsung rapi (Wide Banner) -->
+      <div class="mt-6 rounded-[28px] border border-line bg-white p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm hover:shadow-md transition-all">
+        <div class="max-w-md space-y-3">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-semibold">
+            <span>s.id Forms</span>
+          </div>
+          <h3 class="font-heading font-bold text-2xl text-ink">
+            Formulir yang langsung rapi
+          </h3>
+          <p class="font-worksans text-sm sm:text-base text-body" data-i18n="bento_card7_desc">
+            Terbitkan di link s.id atau microsite, lalu lihat semua jawaban dalam satu tabel spreadsheet tanpa perlu integrasi pihak ketiga.
+          </p>
+          <div class="pt-2">
+            <button onclick="openAuthModal()" class="inline-flex items-center gap-2 font-semibold text-sm text-brand hover:underline">
+              <span>Coba Buat Formulir</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="w-full md:max-w-md rounded-2xl overflow-hidden border border-line bg-paper p-3">
+          <img src="./assets/bento/forms-table.png" onerror="this.src='https://home.s.id/images/enhanced/home-lo/forms-table@2x.png'" alt="Forms Table Spreadsheet Preview" class="w-full object-contain rounded-xl">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- SOLUTIONS SECTION: "Mulai dari yang kamu kerjakan." -->
+  <!-- ========================================================================= -->
+  <section id="solutions-section" class="w-full py-16 sm:py-24 bg-paper/50 border-y border-line">
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-6">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+        <div>
+          <span class="text-xs font-bold tracking-wider uppercase text-mute" data-i18n="sol_eyebrow">Solusi Terarah</span>
+          <h2 class="font-heading font-extrabold text-[28px] sm:text-[36px] tracking-tight text-ink mt-1" data-i18n="sol_title">
+            Mulai dari yang kamu kerjakan.
+          </h2>
+        </div>
+
+        <!-- Tab Controls -->
+        <div class="flex items-center gap-1 sm:gap-2 p-1 rounded-2xl bg-white border border-line shadow-sm overflow-x-auto max-w-full">
+          <button id="sol-tab-0" onclick="switchSolutionTab(0)" class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-brand text-white shadow-sm whitespace-nowrap">
+            Kreator
+          </button>
+          <button id="sol-tab-1" onclick="switchSolutionTab(1)" class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all text-body hover:bg-paper whitespace-nowrap">
+            UMKM
+          </button>
+          <button id="sol-tab-2" onclick="switchSolutionTab(2)" class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all text-body hover:bg-paper whitespace-nowrap">
+            Tim marketing
+          </button>
+          <button id="sol-tab-3" onclick="switchSolutionTab(3)" class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all text-body hover:bg-paper whitespace-nowrap">
+            Agensi
+          </button>
+        </div>
+      </div>
+
+      <!-- Solution Interactive Display Box -->
+      <div class="bg-white rounded-[28px] border border-line p-6 sm:p-10 shadow-sm transition-all duration-300">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <!-- Left: Info & Details (7 cols) -->
+          <div class="lg:col-span-6 space-y-4">
+            <div class="inline-flex items-center gap-2 font-mono text-xs font-bold text-brand" id="sol-index-badge">
+              01 / 04 &bull; Kreator konten
+            </div>
+
+            <h3 class="font-heading font-bold text-2xl sm:text-3xl text-ink leading-tight" id="sol-headline">
+              Satu link untuk semua yang kamu bikin
+            </h3>
+
+            <p class="font-worksans text-sm sm:text-base text-body leading-relaxed" id="sol-description">
+              YouTube, TikTok, affiliate, dan toko digitalmu kumpul di satu halaman bio. Tinggal pasang di profil.
+            </p>
+
+            <div class="pt-4 flex items-center gap-4">
+              <button onclick="openAuthModal()" class="px-5 py-2.5 rounded-xl bg-brand hover:bg-brand-dark text-white font-semibold text-xs sm:text-sm transition-all shadow-sm">
+                Pelajari Lebih Lanjut
+              </button>
+              <div class="flex items-center gap-2">
+                <button onclick="prevSolutionTab()" class="p-2 rounded-full border border-line hover:border-ink transition-colors" title="Sebelumnya">
+                  <svg class="w-4 h-4 text-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                </button>
+                <button onclick="nextSolutionTab()" class="p-2 rounded-full border border-line hover:border-ink transition-colors" title="Berikutnya">
+                  <svg class="w-4 h-4 text-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Visual Graphic (5 cols) -->
+          <div class="lg:col-span-6 flex items-center justify-center">
+            <div id="sol-visual-container" class="w-full max-w-md rounded-2xl bg-gradient-to-br from-paper to-orange-50 border border-line p-5 shadow-sm min-h-[260px] flex items-center justify-center">
+              <img id="sol-image" src="./assets/slides/slide-1.webp" onerror="this.src='https://home.s.id/images/enhanced/home-lo/slide-1-panel.webp'" alt="Kreator Solution Mockup" class="max-h-[240px] w-auto object-contain rounded-xl">
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- TESTIMONIALS & TRUST NUMBERS SECTION -->
+  <!-- ========================================================================= -->
+  <section class="w-full py-16 sm:py-24 bg-white">
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-6 space-y-16">
+      
+      <!-- Key Numbers -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center border-b border-line pb-14">
+        <div class="space-y-1">
+          <div class="font-heading font-extrabold text-4xl sm:text-5xl text-brand">1,9 juta+</div>
+          <div class="text-xs sm:text-sm font-medium text-mute" data-i18n="stat_users">Pengguna terdaftar (Per Desember 2025)</div>
+        </div>
+        <div class="space-y-1">
+          <div class="font-heading font-extrabold text-4xl sm:text-5xl text-ink">191</div>
+          <div class="text-xs sm:text-sm font-medium text-mute" data-i18n="stat_countries">Negara dijangkau secara global</div>
+        </div>
+        <div class="space-y-1">
+          <div class="font-heading font-extrabold text-4xl sm:text-5xl text-ink">150 juta+</div>
+          <div class="text-xs sm:text-sm font-medium text-mute" data-i18n="stat_visits">Kunjungan link per bulan</div>
+        </div>
+      </div>
+
+      <!-- Testimonials Header -->
+      <div class="text-center max-w-xl mx-auto space-y-2">
+        <h2 class="font-heading font-extrabold text-2xl sm:text-3xl text-ink" data-i18n="testi_title">
+          Kata mereka yang sudah pakai.
+        </h2>
+        <p class="text-sm text-mute" data-i18n="testi_subtitle">Cerita nyata dari kreator, pelaku bisnis, dan tim marketing di Indonesia.</p>
+      </div>
+
+      <!-- Testimonials 3 Columns -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Card 1: Rina Dewi Setya -->
+        <div class="p-6 rounded-[24px] border border-line bg-paper/60 hover:bg-white hover:shadow-md transition-all duration-300 flex flex-col justify-between space-y-5">
+          <p class="font-worksans text-sm sm:text-[15px] text-body leading-relaxed">
+            &ldquo;Dulu aku pakai 3 tools terpisah buat link bio, link pendek, dan QR Code. Sejak pindah ke s.id, semuanya cukup di satu tempat. Hemat waktu banget!&rdquo;
+          </p>
+          <div class="flex items-center gap-3 pt-2">
+            <img src="./assets/testimonials/rina.webp" onerror="this.src='https://cdn.s.id/assets/testimonial-rina-dewi.webp'" alt="Rina Dewi Setya" class="w-11 h-11 rounded-full object-cover border border-line">
+            <div>
+              <div class="font-semibold text-ink text-sm">Rina Dewi Setya</div>
+              <div class="text-xs text-mute">Content Creator &amp; Affiliate</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Andi Pratama -->
+        <div class="p-6 rounded-[24px] border border-line bg-paper/60 hover:bg-white hover:shadow-md transition-all duration-300 flex flex-col justify-between space-y-5">
+          <p class="font-worksans text-sm sm:text-[15px] text-body leading-relaxed">
+            &ldquo;Tim kami pakai s.id buat semua kampanye digital. Analitiknya detail, bisa tahu link mana yang paling banyak diklik dan dari channel mana asalnya.&rdquo;
+          </p>
+          <div class="flex items-center gap-3 pt-2">
+            <img src="./assets/testimonials/andi.webp" onerror="this.src='https://cdn.s.id/assets/testimonial-andi-pratama.webp'" alt="Andi Pratama" class="w-11 h-11 rounded-full object-cover border border-line">
+            <div>
+              <div class="font-semibold text-ink text-sm">Andi Pratama</div>
+              <div class="text-xs text-mute">Digital Marketing Lead</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Mega Putri -->
+        <div class="p-6 rounded-[24px] border border-line bg-paper/60 hover:bg-white hover:shadow-md transition-all duration-300 flex flex-col justify-between space-y-5">
+          <p class="font-worksans text-sm sm:text-[15px] text-body leading-relaxed">
+            &ldquo;QR Code dinamis dari s.id ngebantu banget buat menu restoran kami. Bisa ganti menu kapan saja tanpa cetak ulang. Pelanggan juga lebih gampang akses.&rdquo;
+          </p>
+          <div class="flex items-center gap-3 pt-2">
+            <img src="./assets/testimonials/mega.webp" onerror="this.src='https://cdn.s.id/assets/testimonial-mega-putri.webp'" alt="Mega Putri" class="w-11 h-11 rounded-full object-cover border border-line">
+            <div>
+              <div class="font-semibold text-ink text-sm">Mega Putri</div>
+              <div class="text-xs text-mute">Owner Resto &amp; Cafe</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- PRICING SECTION -->
+  <!-- ========================================================================= -->
+  <section id="pricing-section" class="w-full py-16 sm:py-24 bg-paper/40 border-t border-line">
+    <div class="max-w-[1240px] mx-auto px-4 sm:px-6">
+      
+      <!-- Section Title & Toggle -->
+      <div class="text-center max-w-2xl mx-auto space-y-4 mb-12">
+        <h2 class="font-heading font-extrabold text-[28px] sm:text-[40px] text-ink tracking-tight" data-i18n="pricing_title">
+          Bayar kalau paket gratisnya sudah nggak cukup.
+        </h2>
+        <p class="font-worksans text-sm sm:text-base text-body" data-i18n="pricing_subtitle">
+          Paket Gratis nggak punya batas waktu. Upgrade kalau butuh lebih banyak link per hari, domain sendiri, atau riwayat analitik lebih panjang.
+        </p>
+
+        <!-- Billing Toggle -->
+        <div class="inline-flex items-center p-1 rounded-full bg-white border border-line shadow-sm mt-3">
+          <button id="bill-monthly-btn" onclick="setBillingCycle('monthly')" class="px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all text-body hover:text-ink">
+            Per Bulan
+          </button>
+          <button id="bill-annual-btn" onclick="setBillingCycle('annual')" class="px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all bg-brand text-white shadow-sm flex items-center gap-1.5">
+            <span>Ditagih Tahunan</span>
+            <span class="text-[10px] bg-white text-brand px-1.5 py-0.2 rounded-full font-bold">Hemat 20%</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Pricing Cards Grid (5 Tiers) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-3 items-stretch">
+
+        <!-- Tier 1: Gratis -->
+        <div class="rounded-[24px] border border-line bg-white p-5 flex flex-col justify-between hover:border-gray-400 transition-all shadow-sm">
+          <div class="space-y-4">
+            <div>
+              <h3 class="font-heading font-bold text-lg text-ink">Gratis</h3>
+              <p class="text-xs text-mute mt-0.5">Untuk pengguna kasual &amp; pemula</p>
+            </div>
+            <div>
+              <span class="font-heading font-extrabold text-2xl text-ink">Rp 0</span>
+              <span class="text-xs text-mute block mt-0.5">Tanpa batas waktu</span>
+            </div>
+            <ul class="space-y-2.5 text-xs text-body border-t border-line pt-4">
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-emeraldBrand shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span><strong>8</strong> Link per hari</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-emeraldBrand shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span><strong>3</strong> Microsite bio</span>
+              </li>
+              <li class="flex items-center gap-2 text-mute">
+                <span class="w-4 text-center">&mdash;</span>
+                <span>Domain sendiri</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-emeraldBrand shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span>Riwayat analitik <strong>30 hari</strong></span>
+              </li>
+              <li class="flex items-center gap-2 text-mute">
+                <span class="w-4 text-center">&mdash;</span>
+                <span>Tanpa iklan s.id</span>
+              </li>
+            </ul>
+          </div>
+          <button onclick="openAuthModal()" class="w-full mt-6 py-2.5 rounded-xl border border-line hover:border-brand font-semibold text-xs text-ink transition-colors">
+            Mulai Gratis
+          </button>
+        </div>
+
+        <!-- Tier 2: Starter -->
+        <div class="rounded-[24px] border border-line bg-white p-5 flex flex-col justify-between hover:border-gray-400 transition-all shadow-sm">
+          <div class="space-y-4">
+            <div>
+              <h3 class="font-heading font-bold text-lg text-ink">Starter</h3>
+              <p class="text-xs text-mute mt-0.5">Untuk kreator aktif &amp; penjual</p>
+            </div>
+            <div>
+              <span id="price-starter" class="font-heading font-extrabold text-2xl text-ink">Rp 37.500</span>
+              <span class="text-xs text-mute block mt-0.5" id="cycle-starter">/bulan (Rp 449.999/thn)</span>
+            </div>
+            <ul class="space-y-2.5 text-xs text-body border-t border-line pt-4">
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-emeraldBrand shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span><strong>100</strong> Link per hari</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-emeraldBrand shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span><strong>30</strong> Microsite bio</span>
+              </li>
+              <li class="flex items-center gap-2 text-mute">
+                <span class="w-4 text-center">&mdash;</span>
+                <span>Domain sendiri</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-emeraldBrand shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span>Riwayat analitik <strong>180 hari</strong></span>
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-emeraldBrand shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span>Tanpa iklan s.id</span>
+              </li>
+            </ul>
+          </div>
+          <button onclick="openAuthModal()" class="w-full mt-6 py-2.5 rounded-xl border border-line hover:border-brand font-semibold text-xs text-ink transition-colors">
+            Pilih Starter
+          </button>
+        </div>
+
+        <!-- Tier 3: Pro (Highlighted) -->
+        <div class="relative rounded-[24px] border-2 border-brand bg-white p-5 flex flex-col justify-between shadow-lg ring-4 ring-brand/10">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-brand text-white text-[11px] font-bold tracking-wide">
+            Paling Populer
+          </div>
+          <div class="space-y-4 pt-1">
+            <div>
+              <h3 class="font-heading font-bold text-lg text-ink">Pro</h3>
+              <p class="text-xs text-mute mt-0.5">Untuk brand &amp; pebisnis online</p>
+            </div>
+            <div>
+              <span id="price-pro" class="font-heading font-extrabold text-2xl text-brand">Rp 58.333</span>
+              <span class="text-xs text-mute block mt-0.5" id="cycle-pro">/bulan (Rp 699.999/thn)</span>
+            </div>
+            <ul class="space-y-2.5 text-xs text-body border-t border-line pt-4">
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-emeraldBrand shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span><strong>200</strong> Link per hari</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-emeraldBrand shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span><strong>60</strong> Microsite bio</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-emeraldBrand shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span><strong>1</strong> Domain sendiri (.id/.com)</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-emeraldBrand shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span>Riwayat analitik <strong>180 hari</strong></span>
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-emeraldBrand shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span>Smart Redirect &amp; AI</span>
+              </li>
+            </ul>
+          </div>
+          <button onclick="openAuthModal()" class="w-full mt-6 py-2.5 rounded-xl bg-brand hover:bg-brand-dark text-white font-semibold text-xs transition-colors shadow">
+            Pilih Pro
+          </button>
+        </div>
+
+        <!-- Tier 4: Bisnis -->
+        <div class="rounded-[24px] border border-line bg-white p-5 flex flex-col justify-between hover:border-gray-400 transition-all shadow-sm">
+          <div class="space-y-4">
+            <div>
+              <h3 class="font-heading font-bold text-lg text-ink">Bisnis</h3>
+              <p class="text-xs text-mute mt-0.5">Untuk UMKM berkembang &amp; tim</p>
+            </div>
+            <div>
+              <span id="price-business" class="font-heading font-extrabold text-2xl text-ink">Rp 166.667</span>
+              <span class="text-xs text-mute block mt-0.5" id="cycle-business">/bulan (Rp 1.999.999/thn)</span>
+            </div>
+            <ul class="space-y-2.5 text-xs text-body border-t border-line pt-4">
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-emeraldBrand shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span><strong>500</strong> Link per hari</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-emeraldBrand shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span><strong>200</strong> Microsite bio</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-emeraldBrand shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span><strong>5</strong> Domain sendiri</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-emeraldBrand shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span>Riwayat analitik <strong>180 hari</strong></span>
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-emeraldBrand shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span>Webhook &amp; API s.id</span>
+              </li>
+            </ul>
+          </div>
+          <button onclick="openAuthModal()" class="w-full mt-6 py-2.5 rounded-xl border border-line hover:border-brand font-semibold text-xs text-ink transition-colors">
+            Pilih Bisnis
+          </button>
+        </div>
+
+        <!-- Tier 5: Ultimate -->
+        <div class="rounded-[24px] border border-line bg-white p-5 flex flex-col justify-between hover:border-gray-400 transition-all shadow-sm">
+          <div class="space-y-4">
+            <div>
+              <h3 class="font-heading font-bold text-lg text-ink">Ultimate</h3>
+              <p class="text-xs text-mute mt-0.5">Untuk korporasi &amp; agensi besar</p>
+            </div>
+            <div>
+              <span id="price-ultimate" class="font-heading font-extrabold text-2xl text-ink">Rp 1.250.000</span>
+              <span class="text-xs text-mute block mt-0.5" id="cycle-ultimate">/bulan (Rp 14.999.999/thn)</span>
+            </div>
+            <ul class="space-y-2.5 text-xs text-body border-t border-line pt-4">
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-emeraldBrand shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span><strong>1.000</strong> Link per hari</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-emeraldBrand shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span><strong>300</strong> Microsite bio</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-emeraldBrand shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span><strong>10</strong> Domain sendiri</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-emeraldBrand shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span>Riwayat analitik <strong>365 hari</strong></span>
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-emeraldBrand shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span>Dukungan Prioritas 24/7</span>
+              </li>
+            </ul>
+          </div>
+          <button onclick="openAuthModal()" class="w-full mt-6 py-2.5 rounded-xl border border-line hover:border-brand font-semibold text-xs text-ink transition-colors">
+            Pilih Ultimate
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Footnote & Compare CTA -->
+      <div class="mt-8 text-center space-y-3">
+        <p class="text-xs text-mute">
+          Harga belum termasuk PPN. Biaya transaksi s.id Shop dijelaskan terpisah.
+        </p>
+        <div>
+          <button onclick="openComparisonModal()" class="inline-flex items-center gap-1.5 font-semibold text-sm text-brand hover:underline">
+            <span>Bandingkan tabel fitur lengkap</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- FAQ ACCORDION SECTION -->
+  <!-- ========================================================================= -->
+  <section id="faq-section" class="w-full py-16 sm:py-24 bg-white">
+    <div class="max-w-[860px] mx-auto px-4 sm:px-6">
+      
+      <div class="text-center space-y-3 mb-10">
+        <h2 class="font-heading font-extrabold text-[28px] sm:text-[36px] text-ink tracking-tight" data-i18n="faq_title">
+          Yang sering ditanyakan.
+        </h2>
+        <p class="font-worksans text-sm sm:text-base text-body" data-i18n="faq_subtitle">
+          Semua jawaban mengenai layanan link pendek, bio link, QR code, dan keamanan s.id.
+        </p>
+
+        <!-- FAQ Search input -->
+        <div class="max-w-md mx-auto pt-2">
+          <input 
+            type="text" 
+            id="faq-search-input" 
+            oninput="filterFAQ()"
+            placeholder="Cari pertanyaan (misal: gratis, whatsapp, qr, domain)..." 
+            class="w-full px-4 py-2.5 rounded-xl border border-line bg-paper text-sm text-ink outline-none focus:border-brand"
+          />
+        </div>
+      </div>
+
+      <!-- FAQ Accordions List -->
+      <div class="space-y-3" id="faq-list">
+
+        <!-- Q1 -->
+        <details class="group rounded-2xl border border-line bg-paper/40 p-4 sm:p-5 transition-all [&_summary::-webkit-details-marker]:hidden">
+          <summary class="flex items-center justify-between cursor-pointer font-heading font-semibold text-base sm:text-[17px] text-ink hover:text-brand">
+            <span>Apa itu s.id?</span>
+            <span class="p-1 rounded-lg text-mute group-open:rotate-45 transition-transform duration-200">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+            </span>
+          </summary>
+          <div class="pt-3 font-worksans text-sm sm:text-[15px] text-body leading-relaxed border-t border-line/60 mt-3">
+            s.id adalah platform pengelolaan link: link pendek, bio link dan microsite, QR Code, formulir, analitik, dan AI agent AgentS dalam satu akun. Di Indonesia, s.id juga punya s.id Shop untuk jualan produk digital. Layanannya berjalan di s.id, domain .id empat karakter yang termasuk domain pemendek link terpendek di dunia.
+          </div>
+        </details>
+
+        <!-- Q2 -->
+        <details class="group rounded-2xl border border-line bg-paper/40 p-4 sm:p-5 transition-all [&_summary::-webkit-details-marker]:hidden">
+          <summary class="flex items-center justify-between cursor-pointer font-heading font-semibold text-base sm:text-[17px] text-ink hover:text-brand">
+            <span>Siapa yang membuat dan mengelola s.id?</span>
+            <span class="p-1 rounded-lg text-mute group-open:rotate-45 transition-transform duration-200">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+            </span>
+          </summary>
+          <div class="pt-3 font-worksans text-sm sm:text-[15px] text-body leading-relaxed border-t border-line/60 mt-3">
+            s.id diluncurkan PANDI, pengelola domain .id, pada 2014 sebagai pemendek link. Sejak 2022 s.id dimiliki dan dikelola PT Aidi Digital Global. Fitur Microsite hadir pada 2022, s.id Shop pada 2025, dan fitur AI (AgentS, API publik, dan server MCP) pada 2026.
+          </div>
+        </details>
+
+        <!-- Q3 -->
+        <details class="group rounded-2xl border border-line bg-paper/40 p-4 sm:p-5 transition-all [&_summary::-webkit-details-marker]:hidden">
+          <summary class="flex items-center justify-between cursor-pointer font-heading font-semibold text-base sm:text-[17px] text-ink hover:text-brand">
+            <span>Bagaimana cara membuat bio link Instagram dengan s.id?</span>
+            <span class="p-1 rounded-lg text-mute group-open:rotate-45 transition-transform duration-200">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+            </span>
+          </summary>
+          <div class="pt-3 font-worksans text-sm sm:text-[15px] text-body leading-relaxed border-t border-line/60 mt-3">
+            Daftar gratis di s.id, pilih 'Buat Microsite', lalu gunakan template atau mulai dari halaman kosong. Tambahkan link, foto, dan video dengan editor seret dan lepas. Setelah dipublikasikan, halaman m.id/[nama-kamu] siap dipasang di bio Instagram atau TikTok.
+          </div>
+        </details>
+
+        <!-- Q4 -->
+        <details class="group rounded-2xl border border-line bg-paper/40 p-4 sm:p-5 transition-all [&_summary::-webkit-details-marker]:hidden">
+          <summary class="flex items-center justify-between cursor-pointer font-heading font-semibold text-base sm:text-[17px] text-ink hover:text-brand">
+            <span>Apakah paket gratis s.id memiliki batas waktu?</span>
+            <span class="p-1 rounded-lg text-mute group-open:rotate-45 transition-transform duration-200">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+            </span>
+          </summary>
+          <div class="pt-3 font-worksans text-sm sm:text-[15px] text-body leading-relaxed border-t border-line/60 mt-3">
+            Tidak. Paket Gratis s.id dapat digunakan tanpa batas waktu untuk membuat link pendek, halaman bio, dan QR Code sesuai kuota yang tersedia. Paket berbayar tersedia untuk domain sendiri, analitik lanjutan, kuota lebih besar, dan fitur tambahan lainnya.
+          </div>
+        </details>
+
+        <!-- Q5 -->
+        <details class="group rounded-2xl border border-line bg-paper/40 p-4 sm:p-5 transition-all [&_summary::-webkit-details-marker]:hidden">
+          <summary class="flex items-center justify-between cursor-pointer font-heading font-semibold text-base sm:text-[17px] text-ink hover:text-brand">
+            <span>Bisa dipakai buat memperpendek link WhatsApp dan Shopee?</span>
+            <span class="p-1 rounded-lg text-mute group-open:rotate-45 transition-transform duration-200">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+            </span>
+          </summary>
+          <div class="pt-3 font-worksans text-sm sm:text-[15px] text-body leading-relaxed border-t border-line/60 mt-3">
+            Bisa. Tempel link WA, Shopee, Tokopedia, atau link apa pun, lalu ubah jadi m.id/custom. Link pendek lebih enak dibagikan di caption, chat, maupun bahan cetak, dan kamu tetap bisa lihat berapa orang yang klik.
+          </div>
+        </details>
+
+        <!-- Q6 -->
+        <details class="group rounded-2xl border border-line bg-paper/40 p-4 sm:p-5 transition-all [&_summary::-webkit-details-marker]:hidden">
+          <summary class="flex items-center justify-between cursor-pointer font-heading font-semibold text-base sm:text-[17px] text-ink hover:text-brand">
+            <span>QR Code s.id bisa diganti isinya setelah dicetak?</span>
+            <span class="p-1 rounded-lg text-mute group-open:rotate-45 transition-transform duration-200">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+            </span>
+          </summary>
+          <div class="pt-3 font-worksans text-sm sm:text-[15px] text-body leading-relaxed border-t border-line/60 mt-3">
+            Bisa. QR Code di s.id bersifat dinamis, jadi kamu bisa ganti link tujuannya kapan saja tanpa cetak ulang. Cocok buat menu restoran, absensi kantor, atau undangan yang isinya sering berubah.
+          </div>
+        </details>
+
+        <!-- Q7 -->
+        <details class="group rounded-2xl border border-line bg-paper/40 p-4 sm:p-5 transition-all [&_summary::-webkit-details-marker]:hidden">
+          <summary class="flex items-center justify-between cursor-pointer font-heading font-semibold text-base sm:text-[17px] text-ink hover:text-brand">
+            <span>Saya bisa lihat siapa saja yang klik link saya?</span>
+            <span class="p-1 rounded-lg text-mute group-open:rotate-45 transition-transform duration-200">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+            </span>
+          </summary>
+          <div class="pt-3 font-worksans text-sm sm:text-[15px] text-body leading-relaxed border-t border-line/60 mt-3">
+            Bisa. Analitik dasar untuk link, microsite, dan QR Code tersedia di paket Gratis. Kamu dapat melihat jumlah klik, lokasi umum kota/negara, perangkat (HP/Desktop), dan waktu kunjungan. Analitik lanjutan tersedia di paket berbayar.
+          </div>
+        </details>
+
+        <!-- Q8 -->
+        <details class="group rounded-2xl border border-line bg-paper/40 p-4 sm:p-5 transition-all [&_summary::-webkit-details-marker]:hidden">
+          <summary class="flex items-center justify-between cursor-pointer font-heading font-semibold text-base sm:text-[17px] text-ink hover:text-brand">
+            <span>Apa bedanya s.id dengan Linktree?</span>
+            <span class="p-1 rounded-lg text-mute group-open:rotate-45 transition-transform duration-200">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+            </span>
+          </summary>
+          <div class="pt-3 font-worksans text-sm sm:text-[15px] text-body leading-relaxed border-t border-line/60 mt-3">
+            Linktree fokus di halaman link bio saja. Di s.id, link bio, pemendek link, QR Code dinamis, toko produk digital, dan formulir jadi satu paket terintegrasi. Alamat s.id juga paling pendek di dunia, hanya 4 karakter: s.id.
+          </div>
+        </details>
+
+        <!-- Q9 -->
+        <details class="group rounded-2xl border border-line bg-paper/40 p-4 sm:p-5 transition-all [&_summary::-webkit-details-marker]:hidden">
+          <summary class="flex items-center justify-between cursor-pointer font-heading font-semibold text-base sm:text-[17px] text-ink hover:text-brand">
+            <span>Bagaimana s.id melindungi data saya?</span>
+            <span class="p-1 rounded-lg text-mute group-open:rotate-45 transition-transform duration-200">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+            </span>
+          </summary>
+          <div class="pt-3 font-worksans text-sm sm:text-[15px] text-body leading-relaxed border-t border-line/60 mt-3">
+            Koneksi ke s.id dilindungi dengan enkripsi SSL/TLS tingkat tinggi. Setiap tautan dipindai secara otomatis oleh SIDEX AI Security untuk mencegah phishing dan malware. Pengelolaan privasi pengguna dijamin sesuai standar regulasi Indonesia.
+          </div>
+        </details>
+
+      </div>
+
+      <div class="mt-8 text-center text-xs text-mute">
+        Masih ada pertanyaan lain? Hubungi tim dukungan resmi kami di <a href="mailto:helpdesk@s.id" class="text-brand font-semibold hover:underline">helpdesk@s.id</a>.
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- BOTTOM CTA SECTION (DARK BACKGROUND) -->
+  <!-- ========================================================================= -->
+  <section class="w-full bg-dark text-white py-16 sm:py-20 border-t border-gray-800">
+    <div class="max-w-[1000px] mx-auto px-4 sm:px-6 text-center space-y-6">
+      
+      <h2 class="font-heading font-extrabold text-[28px] sm:text-[40px] tracking-tight leading-tight" data-i18n="bottom_cta_title">
+        Bikin link pertamamu sekarang. Sisanya bisa nanti.
+      </h2>
+
+      <!-- Bottom Quick Shortener -->
+      <div class="max-w-xl mx-auto">
+        <form onsubmit="handleBottomShorten(event)" class="flex flex-col sm:flex-row items-center gap-2 p-1.5 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 focus-within:border-brand transition-all">
+          <input 
+            type="url" 
+            id="bottom-url-input" 
+            required
+            placeholder="Tempel link WhatsApp, Shopee, atau Google Form..." 
+            class="flex-1 bg-transparent px-4 py-2.5 text-sm sm:text-base text-white placeholder:text-gray-400 outline-none w-full"
+          />
+          <button type="submit" class="w-full sm:w-auto font-montserrat font-semibold text-sm bg-brand hover:bg-brand-dark text-white px-6 py-2.5 rounded-xl transition-all shadow-sm">
+            Perpendek
+          </button>
+        </form>
+        <p class="mt-3 text-xs text-gray-400" data-i18n="bottom_subtext">
+          Paket Gratis tanpa batas waktu, tanpa kartu kredit.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- FOOTER -->
+  <!-- ========================================================================= -->
+  <footer class="w-full bg-[#0d0e12] text-gray-400 font-worksans text-xs border-t border-gray-800/80 pt-14 pb-10">
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-6 space-y-12">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+        
+        <!-- Company Info -->
+        <div class="lg:col-span-2 space-y-4">
+          <div class="flex items-center gap-2">
+            <!-- White monochrome s.id logo -->
+            <svg width="84" height="34" viewBox="0 0 97 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8.84835 25.7641C9.71083 26.9852 11.3826 27.2635 12.5823 26.3855C13.782 25.5076 14.0554 23.806 13.1929 22.5849L8.84835 25.7641ZM26.5623 7.64683C26.0149 6.24991 24.4585 5.56924 23.0861 6.12646C21.7137 6.68368 21.045 8.26783 21.5924 9.66475L26.5623 7.64683ZM15.9124 0.96173C14.44 1.08692 13.346 2.40338 13.469 3.90213C13.592 5.40083 14.8854 6.51436 16.3578 6.38915L15.9124 0.96173ZM10.4585 13.8522L11.9768 9.75582L6.97047 7.83334L5.45216 11.9297L10.4585 13.8522ZM11.0206 24.1745C13.1929 22.5849 13.1929 22.5849 13.1929 22.5849C13.1929 22.585 13.1928 22.5849 13.1929 22.5849C13.1927 22.5847 13.1923 22.5841 13.192 22.5836C13.1913 22.5827 13.1903 22.5813 13.189 22.5794C13.1863 22.5756 13.1823 22.57 13.1771 22.5625C13.1664 22.5475 13.1507 22.5251 13.1301 22.496C13.0891 22.4379 13.0291 22.3527 12.9532 22.2449C12.8014 22.0294 12.5865 21.7239 12.3344 21.3644C11.8296 20.6446 11.1782 19.7122 10.5862 18.854L6.20691 21.9834C6.81054 22.8585 7.47112 23.804 7.97944 24.5288C8.2339 24.8916 8.45084 25.2 8.60429 25.4179C8.68099 25.5268 8.74187 25.6132 8.7836 25.6724C8.80453 25.702 8.82058 25.7248 8.83152 25.7403C8.83699 25.748 8.84115 25.7539 8.84395 25.7579C8.84537 25.7599 8.84644 25.7614 8.84716 25.7625C8.84757 25.763 8.84811 25.7639 8.84835 25.7641C8.84829 25.764 8.84841 25.7642 8.84835 25.7641C8.84841 25.7641 8.84835 25.7641 11.0206 24.1745ZM10.5862 18.854C10.2562 18.3755 10.0275 17.5209 9.94383 16.5131L4.61209 16.972C4.72101 18.2832 5.05347 20.311 6.20691 21.9834L10.5862 18.854ZM21.0757 8.72145L21.2323 8.96296L25.6986 5.96362L25.542 5.7221L21.0757 8.72145ZM21.6907 12.2688L21.2826 13.5986L26.39 15.2224L26.7981 13.8927L21.6907 12.2688ZM21.2323 8.96296C21.3754 9.18384 21.4961 9.41894 21.5924 9.66475L26.5623 7.64683C26.3314 7.05736 26.0419 6.49336 25.6986 5.96362L21.2323 8.96296ZM21.5924 9.66475C21.918 10.4956 21.9527 11.4151 21.6907 12.2688L26.7981 13.8927C27.4265 11.845 27.3433 9.63945 26.5623 7.64683L21.5924 9.66475ZM11.9768 9.75582C12.6768 7.86728 14.3817 6.55714 16.3578 6.38915L15.9124 0.96173C11.879 1.30466 8.39918 3.9788 6.97047 7.83334L11.9768 9.75582ZM16.3578 6.38915C18.2311 6.22988 20.0405 7.12429 21.0757 8.72145L25.542 5.7221C23.4289 2.46224 19.736 0.63664 15.9124 0.96173L16.3578 6.38915ZM5.45216 11.9297C4.93759 13.3179 4.45353 15.0632 4.61209 16.972L9.94383 16.5131C9.8836 15.788 10.0564 14.9371 10.4585 13.8522L5.45216 11.9297Z" fill="#E33535"/>
+              <path d="M18.809 14.376C17.9464 13.1548 16.2747 12.8766 15.075 13.7545C13.8753 14.6324 13.6019 16.334 14.4644 17.5552L18.809 14.376ZM1.0949 32.4932C1.64235 33.8901 3.1987 34.5708 4.57111 34.0136C5.94353 33.4564 6.61231 31.8722 6.06487 30.4753L1.0949 32.4932ZM11.7449 39.1783C13.2174 39.0531 14.3113 37.7366 14.1883 36.2379C14.0653 34.7392 12.7719 33.6257 11.2995 33.7509L11.7449 39.1783ZM17.1988 26.2878L15.6805 30.3842L20.6868 32.3067L22.2051 28.2103L17.1988 26.2878ZM16.6367 15.9656C14.4644 17.5552 14.4644 17.5552 14.4644 17.5552V17.5552L14.4653 17.5564C14.4653 17.5564 14.467 17.5588 14.4683 17.5607C14.471 17.5644 14.475 17.5701 14.4802 17.5776C14.4908 17.5926 14.5066 17.6149 14.5271 17.644C14.5682 17.7022 14.6282 17.7874 14.7041 17.8951C14.8559 18.1107 15.0708 18.4162 15.3229 18.7756C15.8277 19.4954 16.4791 20.4278 17.0711 21.2861L21.4503 18.1567C20.8468 17.2816 20.1862 16.336 19.6779 15.6112C19.4233 15.2484 19.2064 14.94 19.053 14.7221C18.9763 14.6132 18.9154 14.5269 18.8736 14.4676C18.8528 14.438 18.8367 14.4152 18.8258 14.3998C18.8203 14.3921 18.8162 14.3861 18.8133 14.3821C18.8119 14.3801 18.8101 14.3776 18.8101 14.3776L18.809 14.376V14.376C18.809 14.376 18.809 14.376 16.6367 15.9656ZM17.0711 21.2861C17.4011 21.7645 17.6297 22.6191 17.7135 23.6269L23.0452 23.1681C22.9362 21.8568 22.6038 19.829 21.4503 18.1567L17.0711 21.2861ZM6.58157 31.4186L6.42503 31.1771L1.95875 34.1764L2.11529 34.4179L6.58157 31.4186ZM5.96659 27.8712L6.37468 26.5414L1.26726 24.9176L0.859171 26.2473L5.96659 27.8712ZM6.42503 31.1771C6.28187 30.9562 6.16118 30.7211 6.06487 30.4753L1.0949 32.4932C1.32594 33.0826 1.61535 33.6466 1.95875 34.1764L6.42503 31.1771ZM6.06487 30.4753C5.7393 29.6445 5.70458 28.725 5.96659 27.8712L0.859171 26.2473C0.230754 28.295 0.313989 30.5005 1.0949 32.4932L6.06487 30.4753ZM15.6805 30.3842C14.9805 32.2727 13.2756 33.5829 11.2995 33.7509L11.7449 39.1783C15.7783 38.8354 19.2581 36.1613 20.6868 32.3067L15.6805 30.3842ZM11.2995 33.7509C9.42616 33.9102 7.61683 33.0157 6.58157 31.4186L2.11529 34.4179C4.22831 37.6778 7.92129 39.5034 11.7449 39.1783L11.2995 33.7509ZM22.2051 28.2103C22.7197 26.8222 23.2038 25.0768 23.0452 23.1681L17.7135 23.6269C17.7737 24.352 17.6009 25.203 17.1988 26.2878L22.2051 28.2103Z" fill="#FFFFFF"/>
+              <path d="M44.717 32.0906C43.0845 32.0906 41.5112 31.9013 39.9969 31.5228C38.5064 31.1205 37.3234 30.6237 36.448 30.0322L38.2934 26.0574C39.1689 26.6016 40.1981 27.0511 41.381 27.406C42.5877 27.7372 43.7707 27.9028 44.93 27.9028C46.2076 27.9028 47.1067 27.749 47.6272 27.4415C48.1713 27.1339 48.4434 26.708 48.4434 26.1638C48.4434 25.7143 48.2305 25.3831 47.8046 25.1701C47.4024 24.9335 46.8582 24.7561 46.1721 24.6378C45.486 24.5195 44.7289 24.4012 43.9008 24.2829C43.0964 24.1646 42.2801 24.0108 41.452 23.8215C40.6239 23.6086 39.8668 23.301 39.1807 22.8988C38.4946 22.4966 37.9386 21.9524 37.5127 21.2663C37.1105 20.5802 36.9094 19.6929 36.9094 18.6046C36.9094 17.398 37.2524 16.3333 37.9386 15.4105C38.6483 14.4878 39.6657 13.7662 40.9906 13.2457C42.3156 12.7015 43.9008 12.4294 45.7462 12.4294C47.0475 12.4294 48.3725 12.5714 49.7211 12.8553C51.0697 13.1392 52.1935 13.5533 53.0926 14.0974L51.2471 18.0368C50.3244 17.4926 49.3898 17.1259 48.4434 16.9366C47.5207 16.7237 46.6216 16.6172 45.7462 16.6172C44.5159 16.6172 43.6169 16.7828 43.049 17.114C42.4812 17.4453 42.1973 17.8711 42.1973 18.3917C42.1973 18.8648 42.3984 19.2197 42.8006 19.4563C43.2265 19.6929 43.7825 19.8822 44.4686 20.0242C45.1547 20.1661 45.9 20.2963 46.7045 20.4146C47.5325 20.5092 48.3606 20.663 49.1887 20.8759C50.0168 21.0889 50.7621 21.3964 51.4246 21.7986C52.1107 22.1772 52.6667 22.7095 53.0926 23.3957C53.5184 24.0581 53.7314 24.9335 53.7314 26.0219C53.7314 27.2049 53.3765 28.2577 52.6667 29.1805C51.9569 30.0795 50.9277 30.7893 49.5791 31.3098C48.2542 31.8303 46.6335 32.0906 44.717 32.0906Z" fill="#FFFFFF"/>
+              <path d="M59.2411 32.0906C58.2947 32.0906 57.4785 31.7712 56.7923 31.1324C56.1299 30.4699 55.7986 29.63 55.7986 28.6126C55.7986 27.5953 56.1299 26.779 56.7923 26.1638C57.4785 25.525 58.2947 25.2056 59.2411 25.2056C60.2111 25.2056 61.0274 25.525 61.6899 26.1638C62.3523 26.779 62.6836 27.5953 62.6836 28.6126C62.6836 29.63 62.3523 30.4699 61.6899 31.1324C61.0274 31.7712 60.2111 32.0906 59.2411 32.0906Z" fill="#FFFFFF"/>
+              <path d="M66.4355 31.8067V12.7133H71.9718V31.8067H66.4355ZM69.2037 10.0516C68.1863 10.0516 67.3582 9.75589 66.7194 9.1644C66.0806 8.5729 65.7612 7.83946 65.7612 6.96405C65.7612 6.08864 66.0806 5.35519 66.7194 4.7637C67.3582 4.17221 68.1863 3.87646 69.2037 3.87646C70.221 3.87646 71.0491 4.16038 71.6879 4.72821C72.3267 5.27239 72.6461 5.98217 72.6461 6.85758C72.6461 7.78031 72.3267 8.54924 71.6879 9.1644C71.0728 9.75589 70.2447 10.0516 69.2037 10.0516Z" fill="#FFFFFF"/>
+              <path d="M85.3081 32.0906C83.51 32.0906 81.8893 31.6884 80.4461 30.8839C79.0028 30.0559 77.8553 28.9084 77.0036 27.4415C76.1755 25.9746 75.7614 24.2474 75.7614 22.26C75.7614 20.2489 76.1755 18.51 77.0036 17.0431C77.8553 15.5762 79.0028 14.4405 80.4461 13.6361C81.8893 12.8316 83.51 12.4294 85.3081 12.4294C86.917 12.4294 88.3247 12.7843 89.5314 13.4941C90.738 14.2039 91.6726 15.2804 92.335 16.7237C92.9975 18.1669 93.3287 20.0123 93.3287 22.26C93.3287 24.484 93.0093 26.3295 92.3705 27.7964C91.7317 29.2396 90.809 30.3161 89.6023 31.0259C88.4194 31.7357 86.9879 32.0906 85.3081 32.0906ZM86.2663 27.5479C87.1654 27.5479 87.9816 27.335 88.7151 26.9091C89.4485 26.4833 90.0282 25.8799 90.4541 25.0992C90.9036 24.2947 91.1284 23.3484 91.1284 22.26C91.1284 21.148 90.9036 20.2016 90.4541 19.4209C90.0282 18.6401 89.4485 18.0368 88.7151 17.6109C87.9816 17.185 87.1654 16.9721 86.2663 16.9721C85.3436 16.9721 84.5155 17.185 83.7821 17.6109C83.0486 18.0368 82.4571 18.6401 82.0076 19.4209C81.5817 20.2016 81.3688 21.148 81.3688 22.26C81.3688 23.3484 81.5817 24.2947 82.0076 25.0992C82.4571 25.8799 83.0486 26.4833 83.7821 26.9091C84.5155 27.335 85.3436 27.5479 86.2663 27.5479ZM91.2703 31.8067V27.9028L91.3768 22.2245L91.0219 16.5817V5.47349H96.5583V31.8067H91.2703Z" fill="#FFFFFF"/>
+            </svg>
+          </div>
+          <p class="leading-relaxed">
+            <strong>s.id by PT Aidi Digital Global</strong><br>
+            Icon Business Park, Jl. BSD Raya Barat unit L03, Sampora, Cisauk, Kabupaten Tangerang, Banten 15345.<br>
+            Email: <a href="mailto:helpdesk@s.id" class="text-white hover:underline">helpdesk@s.id</a>
+          </p>
+          <div class="space-y-1 text-[11px] text-gray-500 pt-2">
+            <div>&bull; Infrastruktur selalu dipantau 99.9% uptime</div>
+            <div>&bull; Enkripsi SSL/TLS tingkat perbankan</div>
+            <div>&bull; Kontrol privasi &amp; kepatuhan data Indonesia</div>
+          </div>
+        </div>
+
+        <!-- Col 1: Layanan -->
+        <div class="space-y-3">
+          <div class="text-white font-semibold uppercase tracking-wider text-xs">Layanan</div>
+          <ul class="space-y-2">
+            <li><a href="#hero-tool-section" onclick="switchToolTab('microsite')" class="hover:text-white transition-colors">Microsite Builder</a></li>
+            <li><a href="#hero-tool-section" onclick="switchToolTab('shortener')" class="hover:text-white transition-colors">Link Shortener</a></li>
+            <li><a href="#hero-tool-section" onclick="switchToolTab('qrcode')" class="hover:text-white transition-colors">QR Code Generator</a></li>
+            <li><a href="#bento-section" class="hover:text-white transition-colors">s.id Shop</a></li>
+            <li><a href="#bento-section" class="hover:text-white transition-colors">AgentS AI Assistant</a></li>
+            <li><a href="#bento-section" class="hover:text-white transition-colors">Formulir Online</a></li>
+            <li><a href="#pricing-section" class="hover:text-white transition-colors">Paket Langganan</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 2: Jelajahi -->
+        <div class="space-y-3">
+          <div class="text-white font-semibold uppercase tracking-wider text-xs">Jelajahi</div>
+          <ul class="space-y-2">
+            <li><a href="#solutions-section" class="hover:text-white transition-colors">Solusi Kreator</a></li>
+            <li><a href="#solutions-section" class="hover:text-white transition-colors">Solusi UMKM &amp; Bisnis</a></li>
+            <li><a href="#solutions-section" class="hover:text-white transition-colors">Solusi Tim Marketing</a></li>
+            <li><a href="#solutions-section" class="hover:text-white transition-colors">Solusi Agensi</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Program Afiliasi</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Kalkulator Penghematan</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Blog &amp; Panduan</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Developer & Bantuan -->
+        <div class="space-y-3">
+          <div class="text-white font-semibold uppercase tracking-wider text-xs">Developer &amp; Bantuan</div>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-white transition-colors">Dokumentasi API</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Webhook Integration</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Server MCP s.id</a></li>
+            <li><a href="#faq-section" class="hover:text-white transition-colors">Pusat Bantuan / FAQ</a></li>
+            <li><a href="#partners-section" class="hover:text-white transition-colors">Terpercaya &amp; Aman</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Status Layanan (99.9%)</a></li>
+            <li><a href="mailto:helpdesk@s.id" class="hover:text-white transition-colors">Hubungi Support</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-8 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-gray-500">
+        <div>
+          &copy; 2026 PT Aidi Digital Global. Hak cipta dilindungi.
+        </div>
+        <div class="flex flex-wrap items-center gap-4 sm:gap-6">
+          <a href="#" class="hover:text-white transition-colors">Ketentuan Layanan</a>
+          <a href="#" class="hover:text-white transition-colors">Kebijakan Privasi</a>
+          <a href="#" class="hover:text-white transition-colors">Pengaturan Cookie</a>
+          <button onclick="toggleLanguage()" class="hover:text-white transition-colors text-gray-400 font-semibold">
+            Bahasa: <span id="footer-lang-label">ID</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ========================================================================= -->
+  <!-- FLOATING AGENTS AI CHATBOT WIDGET -->
+  <!-- ========================================================================= -->
+  <div class="fixed bottom-6 right-6 z-40">
+    <!-- Trigger Button -->
+    <button 
+      id="agents-trigger-btn" 
+      onclick="toggleAgentSChat()" 
+      class="group flex items-center gap-2.5 px-4 py-3 rounded-full bg-dark text-white border border-gray-700 shadow-xl hover:shadow-2xl hover:border-brand transition-all hover:scale-105 active:scale-95"
+      title="Tanya AgentS AI"
+    >
+      <div class="w-7 h-7 rounded-full bg-purple-600/30 flex items-center justify-center text-purple-400 border border-purple-500/40">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+      </div>
+      <span class="font-montserrat font-semibold text-xs tracking-wide">Tanya AgentS AI</span>
+      <span class="w-2 h-2 rounded-full bg-emeraldBrand animate-ping"></span>
+    </button>
+
+    <!-- Chat Dialog Window -->
+    <div 
+      id="agents-chat-modal" 
+      class="hidden absolute bottom-16 right-0 w-[350px] sm:w-[380px] bg-white rounded-[24px] shadow-2xl border border-line flex-col overflow-hidden animate-toast z-50"
+      style="height: 480px;"
+    >
+      <!-- Chat Header -->
+      <div class="p-4 bg-dark text-white flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-full bg-purple-600 flex items-center justify-center text-white font-bold text-xs">
+            AI
+          </div>
+          <div>
+            <div class="font-semibold text-sm flex items-center gap-1.5">
+              <span>AgentS</span>
+              <span class="px-1.5 py-0.2 rounded-full bg-purple-500/30 text-purple-300 text-[10px] font-bold">s.id Assistant</span>
+            </div>
+            <div class="text-[11px] text-gray-400">Siap bantu buat link, konten &amp; analitik</div>
+          </div>
+        </div>
+        <button onclick="toggleAgentSChat()" class="p-1 rounded-lg text-gray-400 hover:text-white">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <!-- Chat Messages Container -->
+      <div id="agents-messages" class="flex-1 p-4 overflow-y-auto space-y-3 font-worksans text-xs bg-paper/40">
+        <!-- AI Welcome Message -->
+        <div class="flex items-start gap-2">
+          <div class="w-6 h-6 rounded-full bg-purple-600 text-white flex items-center justify-center shrink-0 text-[10px] font-bold">AI</div>
+          <div class="p-3 rounded-2xl rounded-tl-sm bg-white border border-line shadow-sm text-ink max-w-[85%] leading-relaxed">
+            Halo! Saya <strong>AgentS</strong>, asisten AI resmi dari s.id. Ada yang bisa saya bantu? Kamu bisa tanya fitur, rekomendasi paket, atau minta buatkan ide microsite!
+          </div>
+        </div>
+
+        <!-- Quick Prompts Chips -->
+        <div class="space-y-1.5 pt-1">
+          <button onclick="sendQuickAgentSPrompt('Berapa harga paket s.id Pro?')" class="w-full text-left p-2 rounded-xl bg-white border border-line hover:border-brand text-[11px] text-mute hover:text-brand transition-colors">
+            &bull; Berapa harga paket s.id Pro?
+          </button>
+          <button onclick="sendQuickAgentSPrompt('Bagaimana cara buat QR Code dinamis gratis?')" class="w-full text-left p-2 rounded-xl bg-white border border-line hover:border-brand text-[11px] text-mute hover:text-brand transition-colors">
+            &bull; Cara buat QR Code dinamis gratis?
+          </button>
+          <button onclick="sendQuickAgentSPrompt('Apa bedanya s.id dengan Linktree?')" class="w-full text-left p-2 rounded-xl bg-white border border-line hover:border-brand text-[11px] text-mute hover:text-brand transition-colors">
+            &bull; Apa kelebihan s.id dibanding Linktree?
+          </button>
+        </div>
+      </div>
+
+      <!-- Chat Input Area -->
+      <div class="p-3 bg-white border-t border-line">
+        <form onsubmit="handleAgentSSend(event)" class="flex items-center gap-2">
+          <input 
+            type="text" 
+            id="agents-input" 
+            placeholder="Ketik pertanyaan untuk AgentS..." 
+            class="flex-1 px-3 py-2 rounded-xl border border-line bg-paper text-xs text-ink outline-none focus:border-brand"
+          />
+          <button type="submit" class="p-2 rounded-xl bg-brand text-white hover:bg-brand-dark transition-colors shrink-0">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- MODAL: MASUK / DAFTAR AUTHENTICATION -->
+  <!-- ========================================================================= -->
+  <div id="auth-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-toast">
+    <div class="bg-white rounded-[28px] max-w-md w-full p-6 sm:p-8 shadow-2xl border border-line relative space-y-6">
+      
+      <!-- Close Button -->
+      <button onclick="closeAuthModal()" class="absolute top-5 right-5 p-2 rounded-full text-mute hover:bg-paper hover:text-ink">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+
+      <!-- Modal Header -->
+      <div class="text-center space-y-1">
+        <div class="flex justify-center mb-2">
+          <span class="text-2xl font-bold text-brand font-heading">s.id</span>
+        </div>
+        <h3 id="auth-modal-title" class="font-heading font-extrabold text-2xl text-ink">Masuk ke s.id</h3>
+        <p class="text-xs text-mute" id="auth-modal-sub">Kelola semua link, microsite &amp; QR Code dalam satu tempat.</p>
+      </div>
+
+      <!-- Auth Tabs: Masuk / Daftar -->
+      <div class="grid grid-cols-2 p-1 rounded-xl bg-paper text-xs font-semibold">
+        <button id="auth-tab-login" onclick="switchAuthMode('login')" class="py-2 rounded-lg bg-white text-ink shadow-sm">Masuk</button>
+        <button id="auth-tab-register" onclick="switchAuthMode('register')" class="py-2 rounded-lg text-mute hover:text-ink">Daftar Akun Baru</button>
+      </div>
+
+      <!-- Google OAuth Button Simulation -->
+      <button onclick="simulateGoogleLogin()" class="w-full py-2.5 px-4 rounded-xl border border-line bg-white hover:bg-paper text-ink font-semibold text-xs flex items-center justify-center gap-3 transition-colors shadow-sm">
+        <svg class="w-4 h-4" viewBox="0 0 24 24">
+          <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+          <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+          <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+          <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+        </svg>
+        <span>Lanjutkan dengan Google</span>
+      </button>
+
+      <div class="relative flex items-center justify-center">
+        <div class="border-t border-line w-full"></div>
+        <span class="bg-white px-3 text-[11px] uppercase tracking-wider text-mute absolute">atau email</span>
+      </div>
+
+      <!-- Email / Password Form -->
+      <form onsubmit="handleAuthSubmit(event)" class="space-y-3 text-xs">
+        <div>
+          <label class="block font-semibold text-ink mb-1">Email</label>
+          <input type="email" required placeholder="nama@email.com" class="w-full px-3 py-2.5 rounded-xl border border-line bg-paper text-ink outline-none focus:border-brand">
+        </div>
+        <div>
+          <label class="block font-semibold text-ink mb-1">Kata Sandi</label>
+          <input type="password" required placeholder="Minimal 8 karakter" class="w-full px-3 py-2.5 rounded-xl border border-line bg-paper text-ink outline-none focus:border-brand">
+        </div>
+        <button type="submit" id="auth-submit-btn" class="w-full py-2.5 rounded-xl bg-brand hover:bg-brand-dark text-white font-semibold text-xs transition-colors mt-2">
+          Masuk
+        </button>
+      </form>
+
+      <p class="text-[11px] text-center text-mute">
+        Dengan melanjutkan, kamu menyetujui Ketentuan Layanan dan Kebijakan Privasi s.id.
+      </p>
+
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- MODAL: BANDINGKAN PAKET (FULL MATRIX COMPARISON) -->
+  <!-- ========================================================================= -->
+  <div id="compare-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-toast">
+    <div class="bg-white rounded-[28px] max-w-4xl w-full p-6 sm:p-8 shadow-2xl border border-line relative space-y-5 max-h-[90vh] overflow-y-auto">
+      
+      <!-- Close Button -->
+      <button onclick="closeComparisonModal()" class="absolute top-5 right-5 p-2 rounded-full text-mute hover:bg-paper hover:text-ink">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+
+      <div>
+        <h3 class="font-heading font-extrabold text-2xl text-ink">Perbandingan Paket s.id Lengkap</h3>
+        <p class="text-xs text-mute mt-1">Pilih paket yang paling sesuai dengan kebutuhan bisnismu.</p>
+      </div>
+
+      <!-- Table Matrix -->
+      <div class="overflow-x-auto border border-line rounded-2xl">
+        <table class="w-full text-left text-xs font-worksans">
+          <thead class="bg-paper border-b border-line text-ink font-heading font-bold">
+            <tr>
+              <th class="p-3">Fitur &amp; Kapasitas</th>
+              <th class="p-3">Gratis</th>
+              <th class="p-3">Starter</th>
+              <th class="p-3 text-brand">Pro</th>
+              <th class="p-3">Bisnis</th>
+              <th class="p-3">Ultimate</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-line text-body">
+            <tr>
+              <td class="p-3 font-semibold text-ink">Harga / bulan (tahunan)</td>
+              <td class="p-3 font-bold text-ink">Rp 0</td>
+              <td class="p-3">Rp 37.500</td>
+              <td class="p-3 font-bold text-brand">Rp 58.333</td>
+              <td class="p-3">Rp 166.667</td>
+              <td class="p-3 font-bold text-ink">Rp 1.250.000</td>
+            </tr>
+            <tr>
+              <td class="p-3">Link per hari</td>
+              <td class="p-3">8</td>
+              <td class="p-3">100</td>
+              <td class="p-3 font-bold text-brand">200</td>
+              <td class="p-3">500</td>
+              <td class="p-3">1.000</td>
+            </tr>
+            <tr>
+              <td class="p-3">Halaman Microsite</td>
+              <td class="p-3">3</td>
+              <td class="p-3">30</td>
+              <td class="p-3 font-bold text-brand">60</td>
+              <td class="p-3">200</td>
+              <td class="p-3">300</td>
+            </tr>
+            <tr>
+              <td class="p-3">Domain Sendiri (Custom)</td>
+              <td class="p-3">&mdash;</td>
+              <td class="p-3">&mdash;</td>
+              <td class="p-3 font-bold text-brand">1 Domain</td>
+              <td class="p-3">5 Domain</td>
+              <td class="p-3">10 Domain</td>
+            </tr>
+            <tr>
+              <td class="p-3">Riwayat Analitik</td>
+              <td class="p-3">30 hari</td>
+              <td class="p-3">180 hari</td>
+              <td class="p-3 font-bold text-brand">180 hari</td>
+              <td class="p-3">180 hari</td>
+              <td class="p-3">365 hari</td>
+            </tr>
+            <tr>
+              <td class="p-3">Bebas Iklan s.id</td>
+              <td class="p-3">&mdash;</td>
+              <td class="p-3 text-emeraldBrand font-bold">&check;</td>
+              <td class="p-3 text-emeraldBrand font-bold">&check;</td>
+              <td class="p-3 text-emeraldBrand font-bold">&check;</td>
+              <td class="p-3 text-emeraldBrand font-bold">&check;</td>
+            </tr>
+            <tr>
+              <td class="p-3">QR Code Dinamis</td>
+              <td class="p-3">&mdash;</td>
+              <td class="p-3 text-emeraldBrand font-bold">&check;</td>
+              <td class="p-3 text-emeraldBrand font-bold">&check;</td>
+              <td class="p-3 text-emeraldBrand font-bold">&check;</td>
+              <td class="p-3 text-emeraldBrand font-bold">&check;</td>
+            </tr>
+            <tr>
+              <td class="p-3">Token AgentS AI</td>
+              <td class="p-3">20 token</td>
+              <td class="p-3">50 token</td>
+              <td class="p-3 font-bold text-brand">200 token</td>
+              <td class="p-3">500 token</td>
+              <td class="p-3">1.100 token</td>
+            </tr>
+            <tr>
+              <td class="p-3">Webhook &amp; Developer API</td>
+              <td class="p-3">&mdash;</td>
+              <td class="p-3">&mdash;</td>
+              <td class="p-3">&mdash;</td>
+              <td class="p-3 text-emeraldBrand font-bold">&check;</td>
+              <td class="p-3 text-emeraldBrand font-bold">&check;</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="text-right">
+        <button onclick="closeComparisonModal(); openAuthModal();" class="px-6 py-2.5 rounded-xl bg-brand text-white font-semibold text-xs hover:bg-brand-dark">
+          Pilih Paket Sekarang
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- MODAL: QR CODE PREVIEW POPUP -->
+  <!-- ========================================================================= -->
+  <div id="qr-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-toast">
+    <div class="bg-white rounded-[24px] max-w-xs w-full p-6 text-center space-y-4 border border-line shadow-2xl relative">
+      <button onclick="toggleQRModal()" class="absolute top-4 right-4 p-1.5 text-mute hover:text-ink">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+
+      <h4 class="font-heading font-bold text-base text-ink">QR Code Link s.id</h4>
+      <div id="popup-qr-container" class="p-3 bg-white border border-line rounded-xl flex items-center justify-center mx-auto min-w-[160px] min-h-[160px]"></div>
+      <p class="text-xs font-mono text-brand truncate" id="popup-qr-url">https://m.id/custom</p>
+      
+      <button onclick="downloadPopupQR()" class="w-full py-2 rounded-xl bg-brand text-white text-xs font-semibold hover:bg-brand-dark">
+        Unduh Gambar PNG
+      </button>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <!-- ========================================================================= -->
+  <div id="toast" class="hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-50 px-5 py-3 rounded-2xl bg-dark text-white text-xs font-semibold shadow-2xl flex items-center gap-2 border border-gray-700 animate-toast">
+    <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+    <span id="toast-message">Tersalin ke clipboard!</span>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- APPLICATION JAVASCRIPT LOGIC -->
+  <!-- ========================================================================= -->
+  <script>
+    // State management
+    let currentLang = 'id';
+    let currentClicks = 148;
+    let qrInstance = null;
+    let popupQrInstance = null;
+    let currentQRColor = '#cc3333';
+    let activeSolutionIdx = 0;
+    let billingMode = 'annual';
+
+    // Multi-Language Strings Dictionaries
+    const i18nData = {
+      id: {
+        top_banner: "s.id kini dilengkapi AgentS AI & s.id Shop untuk jualan produk digital langsung dari microsite!",
+        top_banner_cta: "Pelajari Fitur →",
+        nav_products: "Produk",
+        nav_solutions: "Solusi",
+        nav_trusted: "Terpercaya & Aman",
+        nav_pricing: "Berlangganan",
+        btn_login_signup: "Masuk / Daftar",
+        hero_eyebrow: "Solusi Link Terlengkap #1 di Indonesia",
+        hero_title: "Semua link jualanmu di satu tempat. Kelihatan mana yang paling laku.",
+        hero_subtitle: "Bikin link pendek, halaman bio, QR Code, dan toko digital dari satu akun. Lalu cek berapa yang klik, dari kota mana, dan pakai HP apa.",
+        tool_free_badge: "Coba Gratis Langsung",
+        btn_shorten: "Perpendek",
+        alias_toggle: "Kustomisasi alias (contoh: m.id/custom)",
+        alias_optional: "Opsional",
+        result_label: "Link m.id kamu sudah siap:",
+        btn_copy: "Salin",
+        sim_live_stats: "Statistik Klik Real-Time:",
+        stat_top_city: "Kota Teratas",
+        stat_top_device: "Perangkat",
+        stat_top_referrer: "Sumber Trafik",
+        qr_target_label: "Link / Teks Tujuan QR",
+        qr_color_label: "Warna QR Code",
+        qr_feat_1: "QR Dinamis: Link bisa diubah kapan saja",
+        qr_feat_2: "Resolusi tinggi siap cetak (Meja, Banner, Brosur)",
+        btn_download_qr: "Unduh QR Code (PNG)",
+        micro_handle_label: "Klaim Alamat Bio Link Kamu",
+        btn_claim: "Klaim",
+        micro_theme: "Pilih Tema:",
+        badge_no_signup: "Tanpa daftar akun",
+        badge_no_cc: "Tidak perlu kartu kredit",
+        badge_free_tier: "Paket gratis tersedia",
+        partner_official: "Partner Resmi:",
+        media_featured: "s.id di Media:",
+        bento_title: "Tujuh alat, cukup satu akun.",
+        bento_subtitle: "Nggak perlu langganan pemendek link, pembuat halaman, alat QR, toko online, formulir, dan asisten AI sendiri-sendiri.",
+        bento_card1_desc: "Kumpulkan link, katalog, dan portofolio di satu halaman untuk bio Instagram atau TikTok.",
+        bento_card2_desc: "Ubah link WhatsApp, Shopee, atau Google Form jadi alamat s.id yang enak dibagikan.",
+        bento_card3_desc: "Menu restoran berubah? Di paket berbayar, ganti link tujuannya tanpa cetak ulang.",
+        bento_card4_desc: "E-book, template, atau preset langsung bisa dibeli. Pembayaran diverifikasi otomatis, dan saldonya bisa kamu tarik ke rekening.",
+        bento_card5_desc: "Lihat jumlah klik, kota, perangkat, dan waktu kunjungan dari satu dashboard.",
+        bento_card6_desc: "Minta buat link, tanya angka, atau bikin gambar lewat chat. Semua pengguna bisa memakai AgentS.",
+        bento_card7_desc: "Terbitkan di link s.id atau microsite, lalu lihat semua jawaban dalam satu tabel spreadsheet tanpa perlu integrasi pihak ketiga.",
+        sol_eyebrow: "Solusi Terarah",
+        sol_title: "Mulai dari yang kamu kerjakan.",
+        sol_tab_creator: "Kreator Konten",
+        sol_sub_creator: "Bio link lengkap dengan toko digital & portfolio",
+        sol_tab_umkm: "UMKM & Penjual Online",
+        sol_sub_umkm: "Link WhatsApp, Shopee, katalog & QR meja kasir",
+        sol_tab_marketing: "Tim Marketing",
+        sol_sub_marketing: "Pelacakan multi-channel & perbandingan kampanye",
+        sol_tab_agency: "Agensi & Freelancer",
+        sol_sub_agency: "Banyak klien, custom domain, satu dashboard",
+        stat_users: "Pengguna terdaftar (Per Desember 2025)",
+        stat_countries: "Negara dijangkau secara global",
+        stat_visits: "Kunjungan link per bulan",
+        testi_title: "Kata mereka yang sudah pakai.",
+        testi_subtitle: "Cerita nyata dari kreator, pelaku bisnis, dan tim marketing di Indonesia.",
+        pricing_title: "Bayar kalau paket gratisnya sudah nggak cukup.",
+        pricing_subtitle: "Paket Gratis nggak punya batas waktu. Upgrade kalau butuh lebih banyak link per hari, domain sendiri, atau riwayat analitik lebih panjang.",
+        faq_title: "Yang sering ditanyakan.",
+        faq_subtitle: "Semua jawaban mengenai layanan link pendek, bio link, QR code, dan keamanan s.id.",
+        bottom_cta_title: "Bikin link pertamamu sekarang. Sisanya bisa nanti.",
+        bottom_subtext: "Paket Gratis tanpa batas waktu, tanpa kartu kredit."
+      },
+      en: {
+        top_banner: "s.id now features AgentS AI & s.id Shop to sell digital products straight from your microsite!",
+        top_banner_cta: "Explore Features →",
+        nav_products: "Products",
+        nav_solutions: "Solutions",
+        nav_trusted: "Trust & Safety",
+        nav_pricing: "Pricing",
+        btn_login_signup: "Log In / Sign Up",
+        hero_eyebrow: "Indonesia's #1 All-in-One Link Platform",
+        hero_title: "All your sales links in one place. See which one converts best.",
+        hero_subtitle: "Create short links, bio pages, dynamic QR codes, and digital storefronts from one account. Track every click, city, and device in real time.",
+        tool_free_badge: "Try for Free Instantly",
+        btn_shorten: "Shorten",
+        alias_toggle: "Customize alias (e.g. m.id/custom)",
+        alias_optional: "Optional",
+        result_label: "Your m.id link is ready:",
+        btn_copy: "Copy",
+        sim_live_stats: "Real-Time Click Analytics:",
+        stat_top_city: "Top City",
+        stat_top_device: "Device",
+        stat_top_referrer: "Traffic Source",
+        qr_target_label: "Target Link or Text",
+        qr_color_label: "QR Code Color",
+        qr_feat_1: "Dynamic QR: Update target link anytime",
+        qr_feat_2: "High-resolution print-ready (Table, Poster, Flyer)",
+        btn_download_qr: "Download QR Code (PNG)",
+        micro_handle_label: "Claim Your Bio Link Handle",
+        btn_claim: "Claim",
+        micro_theme: "Select Theme:",
+        badge_no_signup: "No signup required",
+        badge_no_cc: "No credit card needed",
+        badge_free_tier: "Free plan available",
+        partner_official: "Official Partners:",
+        media_featured: "s.id in Media:",
+        bento_title: "Seven tools, one single account.",
+        bento_subtitle: "No need for separate subscriptions for link shorteners, page builders, QR generators, digital stores, forms, and AI.",
+        bento_card1_desc: "Bring together links, catalogs, and portfolios on one page for your Instagram or TikTok bio.",
+        bento_card2_desc: "Turn messy WhatsApp, Shopee, or Google Form links into short, memorable s.id addresses.",
+        bento_card3_desc: "Restaurant menu changed? In paid plans, change the destination link anytime without reprinting.",
+        bento_card4_desc: "Sell e-books, presets, and templates directly. Payments are verified automatically with instant bank payouts.",
+        bento_card5_desc: "See click counts, top cities, devices, and visit times from a unified dashboard.",
+        bento_card6_desc: "Ask to generate links, analyze stats, or create visuals via chat. Every user can access AgentS.",
+        bento_card7_desc: "Publish on an s.id link or microsite, and view all survey responses in one tidy spreadsheet table.",
+        sol_eyebrow: "Targeted Solutions",
+        sol_title: "Tailored to the way you work.",
+        sol_tab_creator: "Content Creators",
+        sol_sub_creator: "Bio link page with digital store & portfolio",
+        sol_tab_umkm: "SMEs & Online Sellers",
+        sol_sub_umkm: "WhatsApp links, Shopee, catalogs & cashier QR",
+        sol_tab_marketing: "Marketing Teams",
+        sol_sub_marketing: "Multi-channel tracking & campaign analytics",
+        sol_tab_agency: "Agencies & Freelancers",
+        sol_sub_agency: "Manage multiple clients from one dashboard",
+        stat_users: "Registered users (As of Dec 2025)",
+        stat_countries: "Global countries reached",
+        stat_visits: "Link visits per month",
+        testi_title: "Trusted by millions across the globe.",
+        testi_subtitle: "Real stories from creators, merchants, and digital marketers.",
+        pricing_title: "Pay only when the free plan isn't enough.",
+        pricing_subtitle: "The Free plan has no expiration. Upgrade whenever you need more daily links, custom domains, or extended analytics.",
+        faq_title: "Frequently Asked Questions.",
+        faq_subtitle: "Everything you need to know about short links, bio pages, QR codes, and s.id security.",
+        bottom_cta_title: "Create your first link now. The rest can wait.",
+        bottom_subtext: "Free plan with no time limits and no credit card required."
+      }
+    };
+
+    // Solutions Data
+    const solutions = [
+      {
+        tag: "01 / 04 • Kreator konten",
+        tag_en: "01 / 04 • Content Creators",
+        title: "Satu link untuk semua yang kamu bikin",
+        title_en: "One link for everything you create",
+        desc: "YouTube, TikTok, affiliate, dan toko digitalmu kumpul di satu halaman bio. Tinggal pasang di profil.",
+        desc_en: "Your YouTube, TikTok, affiliate links, and digital store all live on one bio page. Ready for your profile.",
+        img: "./assets/slides/slide-1.webp",
+        fallback: "https://home.s.id/images/enhanced/home-lo/slide-1-panel.webp"
+      },
+      {
+        tag: "02 / 04 • UMKM dan penjual online",
+        tag_en: "02 / 04 • Small Businesses & Sellers",
+        title: "Dari caption ke chat WhatsApp, tanpa link panjang",
+        title_en: "From social captions to WhatsApp orders, clean and short",
+        desc: "Pendekkan link Shopee dan WhatsApp, bikin katalog produk, lalu tempel QR Code dinamis di meja kasir restoran atau toko.",
+        desc_en: "Shorten your Shopee and WhatsApp order links, build product catalogs, and print dynamic QR codes for cashier tables.",
+        img: "./assets/slides/slide-2.webp",
+        fallback: "https://home.s.id/images/enhanced/home-lo/slide-2-mesh.webp"
+      },
+      {
+        tag: "03 / 04 • Tim marketing",
+        tag_en: "03 / 04 • Marketing Teams",
+        title: "Bandingkan semua channel dalam satu tabel",
+        title_en: "Compare every digital channel in a single table",
+        desc: "Kasih link khusus untuk tiap channel dan kampanye. Klik terkumpul per kampanye, jadi nggak perlu rekap manual.",
+        desc_en: "Assign dedicated links for each channel and campaign. Clicks aggregate automatically with zero manual re-entry.",
+        img: "./assets/slides/slide-3.webp",
+        fallback: "https://home.s.id/images/enhanced/home-lo/slide-3-mesh.webp"
+      },
+      {
+        tag: "04 / 04 • Agensi dan freelancer",
+        tag_en: "04 / 04 • Agencies & Freelancers",
+        title: "Banyak klien, satu dashboard",
+        title_en: "Dozens of client brands, one unified dashboard",
+        desc: "Pakai domain masing-masing klien (contoh: go.kopinusantara.id), lalu tarik laporan analitik otomatis saat meeting bulanan.",
+        desc_en: "Deploy custom branded domains for each client and generate instant analytics reports when monthly reviews are due.",
+        img: "./assets/slides/slide-4.webp",
+        fallback: "https://home.s.id/images/enhanced/home-lo/slide-4-mesh.webp"
+      }
+    ];
+
+    // Language Toggle Function
+    function toggleLanguage() {
+      currentLang = (currentLang === 'id') ? 'en' : 'id';
+      document.getElementById('lang-label').innerText = currentLang.toUpperCase();
+      document.getElementById('footer-lang-label').innerText = currentLang.toUpperCase();
+      
+      // Update all data-i18n elements
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (i18nData[currentLang] && i18nData[currentLang][key]) {
+          el.innerHTML = i18nData[currentLang][key];
+        }
+      });
+
+      // Update solutions display
+      updateSolutionDisplay();
+      showToast(currentLang === 'id' ? 'Bahasa diubah ke Bahasa Indonesia' : 'Language switched to English');
+    }
+
+    // Switch Tool Tabs
+    function switchToolTab(tab) {
+      const tabs = ['shortener', 'qrcode', 'microsite'];
+      tabs.forEach(t => {
+        const btn = document.getElementById('tab-btn-' + t);
+        const panel = document.getElementById('panel-' + t);
+        if (t === tab) {
+          btn.className = 'flex items-center gap-2 px-3.5 py-2 rounded-xl text-sm font-semibold transition-all bg-brand text-white shadow-sm';
+          panel.classList.remove('hidden');
+        } else {
+          btn.className = 'flex items-center gap-2 px-3.5 py-2 rounded-xl text-sm font-semibold text-body hover:bg-paper transition-all';
+          panel.classList.add('hidden');
+        }
+      });
+
+      if (tab === 'qrcode') {
+        generateCustomQR();
+      }
+    }
+
+    // Alias input toggle
+    function toggleAliasInput() {
+      const wrapper = document.getElementById('alias-input-wrapper');
+      wrapper.classList.toggle('hidden');
+      if (!wrapper.classList.contains('hidden')) {
+        document.getElementById('custom-alias-input').focus();
+      }
+    }
+
+    // Shorten Form Submit Handler
+    function handleShortenSubmit(e) {
+      e.preventDefault();
+      const longUrl = document.getElementById('long-url-input').value.trim();
+      const customAlias = document.getElementById('custom-alias-input').value.trim();
+      const btn = document.getElementById('shorten-btn');
+      const btnText = document.getElementById('shorten-btn-text');
+
+      if (!longUrl) return;
+
+      // Loading effect
+      btnText.innerText = currentLang === 'id' ? 'Memproses...' : 'Processing...';
+      btn.disabled = true;
+
+      setTimeout(() => {
+        let alias = customAlias.trim() || 'custom';
+        let cleanAlias = alias.replace(/^https?:\/\/m\.id\//, "").replace(/[^a-zA-Z0-9_-]/g, "").toLowerCase();
+        if (!cleanAlias) cleanAlias = "custom";
+        const shortUrl = "https://m.id/" + cleanAlias;
+
+        document.getElementById('result-short-url').innerText = shortUrl;
+        document.getElementById('result-short-url').href = longUrl;
+        document.getElementById('result-orig-url').innerText = longUrl;
+        
+        btnText.innerText = i18nData[currentLang].btn_shorten;
+        btn.disabled = false;
+
+        showToast(currentLang === 'id' ? '✓ Link berhasil diperpendek!' : '✓ Link shortened successfully!');
+      }, 400);
+    }
+
+    // Bottom Shorten Form Handler
+    function handleBottomShorten(e) {
+      e.preventDefault();
+      const val = document.getElementById('bottom-url-input').value.trim();
+      if (!val) return;
+      document.getElementById('long-url-input').value = val;
+      document.getElementById('main-landing').scrollIntoView({ behavior: 'smooth' });
+      switchToolTab('shortener');
+      showToast(currentLang === 'id' ? 'Link dimuat ke pemendek di atas!' : 'Link loaded into shortener!');
+    }
+
+    // Copy Short Link to Clipboard
+    function copyShortLink() {
+      const link = document.getElementById('result-short-url').innerText;
+      navigator.clipboard.writeText(link).then(() => {
+        const copyText = document.getElementById('copy-text');
+        copyText.innerText = currentLang === 'id' ? 'Tersalin!' : 'Copied!';
+        showToast(currentLang === 'id' ? 'Tersalin ke clipboard: ' + link : 'Copied to clipboard: ' + link);
+        setTimeout(() => {
+          copyText.innerText = i18nData[currentLang].btn_copy;
+        }, 2000);
+      });
+    }
+
+    // Simulate Clicks (+1)
+    function simulateClick() {
+      currentClicks += 1;
+      document.getElementById('stat-click-count').innerText = currentClicks + ' Klik';
+      showToast('+1 Klik baru tercatat di analitik!');
+    }
+
+    // QR Code Generation
+    function generateCustomQR() {
+      const container = document.getElementById('qrcode-container');
+      const text = document.getElementById('qr-input-text').value.trim() || 'https://m.id/custom';
+      document.getElementById('qr-caption').innerText = text;
+
+      container.innerHTML = '';
+      if (typeof QRCode !== 'undefined') {
+        qrInstance = new QRCode(container, {
+          text: text,
+          width: 140,
+          height: 140,
+          colorDark: currentQRColor,
+          colorLight: '#ffffff',
+          correctLevel: QRCode.CorrectLevel.H
+        });
+      }
+    }
+
+    function setQRColor(color) {
+      currentQRColor = color;
+      generateCustomQR();
+    }
+
+    function downloadQRCode() {
+      const container = document.getElementById('qrcode-container');
+      const img = container.querySelector('img') || container.querySelector('canvas');
+      if (img) {
+        const a = document.createElement('a');
+        a.href = img.src || (img.toDataURL ? img.toDataURL('image/png') : '#');
+        a.download = 'sid-qr-code.png';
+        a.click();
+        showToast('QR Code berhasil diunduh!');
+      }
+    }
+
+    // QR Modal Popup
+    function toggleQRModal() {
+      const modal = document.getElementById('qr-modal');
+      modal.classList.toggle('hidden');
+      if (!modal.classList.contains('hidden')) {
+        const link = document.getElementById('result-short-url').innerText;
+        document.getElementById('popup-qr-url').innerText = link;
+        const popContainer = document.getElementById('popup-qr-container');
+        popContainer.innerHTML = '';
+        if (typeof QRCode !== 'undefined') {
+          popupQrInstance = new QRCode(popContainer, {
+            text: link,
+            width: 160,
+            height: 160,
+            colorDark: '#cc3333',
+            colorLight: '#ffffff',
+            correctLevel: QRCode.CorrectLevel.H
+          });
+        }
+      }
+    }
+
+    function downloadPopupQR() {
+      const container = document.getElementById('popup-qr-container');
+      const img = container.querySelector('img') || container.querySelector('canvas');
+      if (img) {
+        const a = document.createElement('a');
+        a.href = img.src || (img.toDataURL ? img.toDataURL('image/png') : '#');
+        a.download = 'sid-short-qr.png';
+        a.click();
+        showToast('Gambar QR Code tersimpan!');
+      }
+    }
+
+    // Microsite Live Preview Updates
+    function updateMicrositePreview() {
+      const handle = document.getElementById('microsite-handle-input').value.trim() || 'brandmu';
+      document.getElementById('micro-title').innerText = '@' + handle;
+      document.getElementById('micro-avatar').innerText = handle.charAt(0).toUpperCase();
+    }
+
+    function setMicroTheme(theme) {
+      const card = document.getElementById('micro-phone-card');
+      if (theme === 'dark') {
+        card.className = 'w-full max-w-sm rounded-[24px] border-2 border-gray-700 bg-gray-950 text-white p-5 shadow-lg text-center space-y-3 transition-colors';
+        document.getElementById('micro-title').className = 'font-bold text-white text-sm';
+      } else if (theme === 'matcha') {
+        card.className = 'w-full max-w-sm rounded-[24px] border-2 border-emerald-200 bg-emerald-50 text-ink p-5 shadow-md text-center space-y-3 transition-colors';
+        document.getElementById('micro-title').className = 'font-bold text-emerald-950 text-sm';
+      } else {
+        card.className = 'w-full max-w-sm rounded-[24px] border-2 border-line bg-gradient-to-b from-orange-50 to-white p-5 shadow-md text-center space-y-3 transition-colors';
+        document.getElementById('micro-title').className = 'font-bold text-ink text-sm';
+      }
+    }
+
+    // Solutions Tabs
+    function switchSolutionTab(idx) {
+      activeSolutionIdx = idx;
+      for (let i = 0; i < 4; i++) {
+        const btn = document.getElementById('sol-tab-' + i);
+        if (i === idx) {
+          btn.className = 'px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-brand text-white shadow-sm whitespace-nowrap';
+        } else {
+          btn.className = 'px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all text-body hover:bg-paper whitespace-nowrap';
+        }
+      }
+      updateSolutionDisplay();
+    }
+
+    function prevSolutionTab() {
+      const nextIdx = (activeSolutionIdx - 1 + 4) % 4;
+      switchSolutionTab(nextIdx);
+    }
+
+    function nextSolutionTab() {
+      const nextIdx = (activeSolutionIdx + 1) % 4;
+      switchSolutionTab(nextIdx);
+    }
+
+    function updateSolutionDisplay() {
+      const sol = solutions[activeSolutionIdx];
+      document.getElementById('sol-index-badge').innerText = currentLang === 'id' ? sol.tag : sol.tag_en;
+      document.getElementById('sol-headline').innerText = currentLang === 'id' ? sol.title : sol.title_en;
+      document.getElementById('sol-description').innerText = currentLang === 'id' ? sol.desc : sol.desc_en;
+      const imgEl = document.getElementById('sol-image');
+      imgEl.src = sol.img;
+      imgEl.onerror = function() { this.src = sol.fallback; };
+    }
+
+    // Pricing Billing Mode
+    function setBillingCycle(mode) {
+      billingMode = mode;
+      const btnMonthly = document.getElementById('bill-monthly-btn');
+      const btnAnnual = document.getElementById('bill-annual-btn');
+
+      if (mode === 'monthly') {
+        btnMonthly.className = 'px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all bg-brand text-white shadow-sm';
+        btnAnnual.className = 'px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all text-body hover:text-ink flex items-center gap-1.5';
+        
+        document.getElementById('price-starter').innerText = 'Rp 45.000';
+        document.getElementById('cycle-starter').innerText = '/bulan (ditagih bulanan)';
+        document.getElementById('price-pro').innerText = 'Rp 70.000';
+        document.getElementById('cycle-pro').innerText = '/bulan (ditagih bulanan)';
+        document.getElementById('price-business').innerText = 'Rp 200.000';
+        document.getElementById('cycle-business').innerText = '/bulan (ditagih bulanan)';
+        document.getElementById('price-ultimate').innerText = 'Rp 1.500.000';
+        document.getElementById('cycle-ultimate').innerText = '/bulan (ditagih bulanan)';
+      } else {
+        btnAnnual.className = 'px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all bg-brand text-white shadow-sm flex items-center gap-1.5';
+        btnMonthly.className = 'px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all text-body hover:text-ink';
+        
+        document.getElementById('price-starter').innerText = 'Rp 37.500';
+        document.getElementById('cycle-starter').innerText = '/bulan (Rp 449.999/thn)';
+        document.getElementById('price-pro').innerText = 'Rp 58.333';
+        document.getElementById('cycle-pro').innerText = '/bulan (Rp 699.999/thn)';
+        document.getElementById('price-business').innerText = 'Rp 166.667';
+        document.getElementById('cycle-business').innerText = '/bulan (Rp 1.999.999/thn)';
+        document.getElementById('price-ultimate').innerText = 'Rp 1.250.000';
+        document.getElementById('cycle-ultimate').innerText = '/bulan (Rp 14.999.999/thn)';
+      }
+    }
+
+    // FAQ Filter Function
+    function filterFAQ() {
+      const query = document.getElementById('faq-search-input').value.toLowerCase();
+      const items = document.querySelectorAll('#faq-list details');
+      items.forEach(item => {
+        const text = item.innerText.toLowerCase();
+        if (text.includes(query)) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+    }
+
+    // Toast Function
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toast-message').innerText = msg;
+      toast.classList.remove('hidden');
+      clearTimeout(window.toastTimer);
+      window.toastTimer = setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 3000);
+    }
+
+    // Auth Modal Functions
+    function openAuthModal() {
+      document.getElementById('auth-modal').classList.remove('hidden');
+    }
+
+    function closeAuthModal() {
+      document.getElementById('auth-modal').classList.add('hidden');
+    }
+
+    function switchAuthMode(mode) {
+      const title = document.getElementById('auth-modal-title');
+      const submitBtn = document.getElementById('auth-submit-btn');
+      const tabLogin = document.getElementById('auth-tab-login');
+      const tabReg = document.getElementById('auth-tab-register');
+
+      if (mode === 'register') {
+        title.innerText = 'Daftar Akun s.id';
+        submitBtn.innerText = 'Daftar Gratis';
+        tabReg.className = 'py-2 rounded-lg bg-white text-ink shadow-sm';
+        tabLogin.className = 'py-2 rounded-lg text-mute hover:text-ink';
+      } else {
+        title.innerText = 'Masuk ke s.id';
+        submitBtn.innerText = 'Masuk';
+        tabLogin.className = 'py-2 rounded-lg bg-white text-ink shadow-sm';
+        tabReg.className = 'py-2 rounded-lg text-mute hover:text-ink';
+      }
+    }
+
+    function simulateGoogleLogin() {
+      closeAuthModal();
+      showToast('✓ Berhasil masuk sebagai pengguna s.id (Demo)!');
+    }
+
+    function handleAuthSubmit(e) {
+      e.preventDefault();
+      closeAuthModal();
+      showToast('✓ Berhasil masuk ke akun s.id!');
+    }
+
+    // Comparison Modal
+    function openComparisonModal() {
+      document.getElementById('compare-modal').classList.remove('hidden');
+    }
+
+    function closeComparisonModal() {
+      document.getElementById('compare-modal').classList.add('hidden');
+    }
+
+    // Mobile Nav
+    function toggleMobileNav() {
+      document.getElementById('mobile-nav').classList.toggle('hidden');
+    }
+
+    // AgentS AI Chatbot Functions
+    function toggleAgentSChat() {
+      const chat = document.getElementById('agents-chat-modal');
+      chat.classList.toggle('hidden');
+    }
+
+    function sendQuickAgentSPrompt(text) {
+      document.getElementById('agents-input').value = text;
+      handleAgentSSend(new Event('submit'));
+    }
+
+    function handleAgentSSend(e) {
+      if (e) e.preventDefault();
+      const input = document.getElementById('agents-input');
+      const text = input.value.trim();
+      if (!text) return;
+
+      const container = document.getElementById('agents-messages');
+
+      // User Message
+      const userBubble = document.createElement('div');
+      userBubble.className = 'flex items-start justify-end gap-2';
+      userBubble.innerHTML = `
+        <div class="p-3 rounded-2xl rounded-tr-sm bg-brand text-white shadow-sm max-w-[85%] leading-relaxed">
+          ${text}
+        </div>
+      `;
+      container.appendChild(userBubble);
+      input.value = '';
+      container.scrollTop = container.scrollHeight;
+
+      // Simulated AI Reply
+      setTimeout(() => {
+        let reply = "Terima kasih sudah bertanya! s.id mempermudah pengelolaan link pendek, bio page, QR code, dan toko digital dalam satu dashboard praktis.";
+        const lower = text.toLowerCase();
+        if (lower.includes('harga') || lower.includes('pro')) {
+          reply = "Paket Pro s.id adalah yang paling populer seharga Rp 58.333/bulan (ditagih tahunan). Kamu mendapatkan 200 link per hari, 60 microsite, 1 domain sendiri (misal: link.brandmu.id), dan riwayat analitik 180 hari!";
+        } else if (lower.includes('qr')) {
+          reply = "Kamu bisa buat QR Code dinamis langsung di tab QR Code s.id! Kelebihannya, link tujuan di QR bisa kamu ubah sewaktu-waktu di dashboard tanpa perlu mencetak ulang barcode fisiknya.";
+        } else if (lower.includes('linktree') || lower.includes('beda')) {
+          reply = "Dibandingkan Linktree, s.id memiliki nama domain terpendek di dunia (cuma s.id), terintegrasi langsung dengan link shortener & QR code dinamis, fitur s.id Shop untuk pembayaran lokal (QRIS, VA), dan server di Indonesia.";
+        }
+
+        const aiBubble = document.createElement('div');
+        aiBubble.className = 'flex items-start gap-2';
+        aiBubble.innerHTML = `
+          <div class="w-6 h-6 rounded-full bg-purple-600 text-white flex items-center justify-center shrink-0 text-[10px] font-bold">AI</div>
+          <div class="p-3 rounded-2xl rounded-tl-sm bg-white border border-line shadow-sm text-ink max-w-[85%] leading-relaxed">
+            ${reply}
+          </div>
+        `;
+        container.appendChild(aiBubble);
+        container.scrollTop = container.scrollHeight;
+      }, 600);
+    }
+
+    // Auto-initialize on load
+    window.addEventListener('DOMContentLoaded', () => {
+      generateCustomQR();
+      updateSolutionDisplay();
+    });
+  </script>
+</body>
+</html>

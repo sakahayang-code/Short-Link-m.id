@@ -1,0 +1,9 @@
+.gemini
+.bash_logout
+.bashrc
+.gitconfig
+.profile
+*.log
+tmp/
+.cache/
+.local/
